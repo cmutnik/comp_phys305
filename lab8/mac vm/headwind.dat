@@ -1,0 +1,9 @@
+# incident degree VS range w/ headwind of 15mph
+#degrees	same direction (NY)		opp direction (NY)	same direction (Denver)		opp direction (Denver)
+30		98.1889				125.238			107.859				132.81
+35		100.725				132.153			111.542				140.588
+40		100.689				135.704			112.159				144.695
+45		98.1267				136.011			109.911				145.241
+50		93.201				133.002			104.964				142.14
+55		86.1162				127.146			97.5483				135.72
+60		76.8938				118.215			87.6067				125.944

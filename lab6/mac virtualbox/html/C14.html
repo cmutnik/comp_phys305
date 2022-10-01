@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>isotope2.html</title>
+  </head>
+  <body>
+    // program and functions to generate weighted random numbers<br>
+    // using von Neumann's method<br>
+    // -Corey Mutnik 3/15<br>
+    // REF: P. Gorham 2/21/2007, updated to c++ 2/3/2013<br>
+    <br>
+    using namespace std;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+    #include &lt;iostream&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+    #include &lt;iomanip&gt;&nbsp;&nbsp; // this is required to use
+    "setprecision" below<br>
+    #include &lt;fstream&gt;<br>
+    #define _USE_MATH_DEFINES&nbsp; <br>
+    #include &lt;cmath&gt;&nbsp;&nbsp; <br>
+    #include &lt;cstdio&gt;&nbsp;&nbsp;&nbsp;&nbsp; // for the&nbsp;
+    useful old C-standard stuff <br>
+    #include &lt;cstdlib&gt; <br>
+    #include &lt;math.h&gt;&nbsp;&nbsp;&nbsp; // for lgamma function<br>
+    <br>
+    <br>
+    #define HL 5730.0&nbsp;&nbsp;&nbsp; // Half-life of C14, in years,
+    after death<br>
+    #define decays 15.0&nbsp;&nbsp;&nbsp; // degcays per gram per second<br>
+    <br>
+    double func(double mu, double x);<br>
+    <br>
+    main(int argc, char *argv[])<br>
+    {<br>
+    <br>
+    &nbsp;&nbsp;&nbsp; if(argc&lt;4){<br>
+    &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; cerr&lt;&lt; "usage: C14 [mass
+    of C14 in grams][age of sample in years][nTrials]"&lt;&lt;endl;<br>
+    &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; exit(0);<br>
+    &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; }<br>
+    <br>
+    double mass;&nbsp;&nbsp;&nbsp; // in grams<br>
+    double age;&nbsp;&nbsp;&nbsp; // in years<br>
+    double nTrials, x, i, fx, W, mu;<br>
+    double *arr;<br>
+    srand48(15485863);<br>
+    <br>
+    &nbsp; mass = atof(argv[1]);<br>
+    &nbsp; age = atof(argv[2]);<br>
+    &nbsp; nTrials = atoi(argv[3]);<br>
+    <br>
+    &nbsp; mu = mass*decays*exp(-(age)/(HL/log(2.0)));<br>
+    //&nbsp; cout &lt;&lt; mu &lt;&lt; endl;<br>
+    &nbsp; arr = new double[20]();<br>
+    &nbsp; <br>
+    <br>
+    for(i=0;i&lt;nTrials;i++){<br>
+    &nbsp;&nbsp;&nbsp; x = (int)(14*drand48());&nbsp;&nbsp;&nbsp; // 14
+    was the max number of meteors per minute in lab 6a<br>
+    &nbsp;&nbsp;&nbsp; fx = func((double) x, mu);<br>
+    &nbsp;&nbsp;&nbsp; W = drand48();<br>
+    &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; if(W&lt;fx){<br>
+    &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; arr[(int) x]+=1;<br>
+    &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; }<br>
+    &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; }<br>
+    &nbsp;&nbsp;&nbsp; for(int i=0;i&lt;20;i++){<br>
+    &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; cout &lt;&lt; i &lt;&lt; "\t"
+    &lt;&lt; arr[i] &lt;&lt; endl;<br>
+    &nbsp;&nbsp;&nbsp; }<br>
+    &nbsp; <br>
+    }<br>
+    <br>
+    // Poisson Distribution function<br>
+    double func(double x, double mu)<br>
+    {&nbsp;&nbsp;&nbsp; <br>
+    &nbsp;&nbsp;&nbsp; return(pow(mu,x)*exp(-mu)/exp(lgamma(x+1.0)));<br>
+    }<br>
+    <br>
+    <div align="center"><a
+        href="file:///home/cmutnik/work/lab6/html/index.html">Home</a> |
+      <a href="file:///home/cmutnik/work/lab6/html/pi.html">Lab1</a> | <a
+        href="file:///home/cmutnik/work/lab6/html/lab2.html">Lab2</a> |
+      <a href="file:///home/cmutnik/work/lab6/html/lab3.html">Lab3</a> |
+      <a href="file:///home/cmutnik/work/lab6/html/lab4.html">Lab4</a> |
+      <a href="file:///home/cmutnik/work/lab6/html/lab5.html">Lab5</a> |
+      <a href="file:///home/cmutnik/work/lab6/html/lab6.html">Lab6</a></div>
+  </body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>isotope2.html</title>
+  </head>
+  <body>
+    # gnuplot script for plotting meteors<br>
+    # Corey Mutnik 2/15<br>
+    set title "Poisson distribution test"<br>
+    set xlabel "meteors per minute, k"<br>
+    set ylabel "Number of times k was observed"<br>
+    # set the x and y limits for the plot<br>
+    set xr [-1:16.0]<br>
+    set yr [0.0:40.0]<br>
+    # log scales not needed her, so comment out<br>
+    #set logscale x<br>
+    #set logscale y<br>
+    #<br>
+    set samples 100<br>
+    # here is the Poisson function, with parameters N (total number of
+    meteors)<br>
+    #&nbsp; and m, the mean value per minute<br>
+    f(x) = N*(m**x)*(exp(-m)/gamma(x+1))<br>
+    # we need starting guesses for the fit:<br>
+    m=4;N=150;<br>
+    # now actually do the fit from data file columns 1 and 2 for x,y,
+    and<br>
+    # fitting parameters m and N in the equation above<br>
+    fit f(x) 'meteorpacks2.dat' using 1:2 via m , N<br>
+    set pointsize 2<br>
+    set bar small<br>
+    plot&nbsp;&nbsp;&nbsp; "meteorpacks2.dat" using
+    1:2:(sqrt($2+1))&nbsp; title 'Meteors per minute' with yerrorbars, \<br>
+    &nbsp;N*(m**x)*(exp(-m)/gamma(x+1)) with lines title 'Poisson Fit'<br>
+    <br>
+    <br>
+    <div align="center"><a
+        href="file:///home/cmutnik/work/lab6/html/index.html">Home</a> |
+      <a href="file:///home/cmutnik/work/lab6/html/pi.html">Lab1</a> | <a
+        href="file:///home/cmutnik/work/lab6/html/lab2.html">Lab2</a> |
+      <a href="file:///home/cmutnik/work/lab6/html/lab3.html">Lab3</a> |
+      <a href="file:///home/cmutnik/work/lab6/html/lab4.html">Lab4</a> |
+      <a href="file:///home/cmutnik/work/lab6/html/lab5.html">Lab5</a> |
+      <a href="file:///home/cmutnik/work/lab6/html/lab6.html">Lab6</a></div>
+  </body>
+</html>

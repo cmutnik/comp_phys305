@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>lab4</title>
+  </head>
+  <body>
+    <div align="center"><big><big><b>Monte-Carlo Integration (Code):<br>
+            <br>
+          </b> </big></big></div>
+    // hypersphereMC: a monte-carlo integration of a hypersphere volume
+    <br>
+    // C. Mutnik student completion 2/10/15<br>
+    // from P. Gorhams, updated 2/10/2015 for Physics, 305 code<br>
+    <br>
+    using namespace std;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+    #include &lt;iostream&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+    #include &lt;iomanip&gt;&nbsp;&nbsp; // required to use
+    "setprecision" if needed<br>
+    #include &lt;fstream&gt;<br>
+    #define _USE_MATH_DEFINES&nbsp; <br>
+    #include &lt;cmath&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+    #include &lt;stdlib.h&gt;<br>
+    #include &lt;math.h&gt;&nbsp;&nbsp;&nbsp; // for tgamma<br>
+    #define PI M_PI<br>
+    <br>
+    main(int argc, char *argv[])<br>
+    {<br>
+    <br>
+    &nbsp;&nbsp;&nbsp; double hit,xi,R,Rsq,D,R_D,Vtot,Vsphere, A, Vtrue,
+    r;<br>
+    &nbsp;&nbsp;&nbsp; double hits=0.0;<br>
+    &nbsp;&nbsp;&nbsp; int n,i,NDIM=3, Ntrials=1000000;<br>
+    &nbsp;&nbsp;&nbsp; <br>
+    &nbsp;&nbsp;&nbsp; srand48(1299811); // a large prime<br>
+    <br>
+    &nbsp;&nbsp;&nbsp; /* usage: NDIM = # of dimensions, NMAX=number of
+    sample points */<br>
+    &nbsp;&nbsp;&nbsp; if(argc&lt;2){<br>
+    &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; cerr&lt;&lt; "usage:
+    hypersphereMC [NDIM][NMAX]"&lt;&lt;endl;<br>
+    &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; exit(0);<br>
+    &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; }<br>
+    &nbsp;&nbsp;&nbsp; <br>
+    &nbsp;&nbsp;&nbsp; NDIM = atoi(argv[1]); // number of dimensions<br>
+    &nbsp;&nbsp;&nbsp; Ntrials = atoi(argv[2]); // number of trials<br>
+    <br>
+    <br>
+    <br>
+    &nbsp;&nbsp;&nbsp; D= 2.0;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; //
+    side of hypercube needed to contain hypersphere<br>
+    &nbsp;&nbsp;&nbsp; R_D = 1.0;&nbsp;&nbsp;&nbsp; // radius of
+    hypersphere<br>
+    &nbsp;&nbsp;&nbsp; hit = 0.0;&nbsp;&nbsp;&nbsp; // the counter for
+    events within sphere<br>
+    &nbsp;&nbsp;&nbsp; n=0;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; //
+    initialize the loop counter<br>
+    &nbsp;&nbsp;&nbsp; <br>
+    &nbsp;&nbsp;&nbsp; //-------this is the main
+    loop----------------------<br>
+    <br>
+    &nbsp;&nbsp;&nbsp; while(n&lt;Ntrials){&nbsp; // continue generating
+    coordinates up to Ntrials<br>
+    &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Rsq = 0.0;&nbsp; // this
+    variable accumulates the square of each coordinate<br>
+    &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; double r[NDIM];<br>
+    <br>
+    &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; for(int i=0;i&lt;NDIM;i++){<br>
+    &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; <br>
+    &nbsp;&nbsp;&nbsp; xi = (drand48()-0.5)*2.; // uniform random value
+    +/-[0,1] in each coordinate<br>
+    &nbsp;&nbsp;&nbsp; Rsq += pow(xi,2.);&nbsp;&nbsp;&nbsp; // sum up
+    the squares<br>
+    &nbsp;&nbsp;&nbsp; <br>
+    &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; } // end of NDIM
+    loop------------<br>
+    R = sqrt(Rsq); // calc radius<br>
+    &nbsp;&nbsp;&nbsp; hits += R&lt;=1.0 ? 1.0 : 0.0;<br>
+    &nbsp;&nbsp;&nbsp; //hits += R&lt;=R_D ? 1.0 : 0.0;<br>
+    &nbsp;&nbsp;&nbsp; <br>
+    n++;&nbsp;&nbsp;&nbsp; // counter for Ntrials while loop<br>
+    &nbsp;&nbsp;&nbsp;&nbsp; <br>
+    &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; }&nbsp; //---------END OF
+    WHILE LOOP-----------------<br>
+    &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <br>
+    &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Vtot =
+    pow(2.,NDIM);<br>
+    &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //Vtot =
+    pow(D,NDIM);<br>
+    <br>
+    &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Vsphere =
+    (hits/Ntrials)*Vtot;<br>
+    &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+    //&nbsp;&nbsp;&nbsp; &nbsp;Vtrue =
+    (pow(M_PI,NDIM/2.)/tgamma((NDIM/2.)+1.))*pow(R_D,NDIM);&nbsp; //
+    R_D=1 so pow(R_D,NDIM)=1<br>
+    &nbsp;Vtrue =
+    pow(M_PI,NDIM/2.)*(1/exp(lgamma((NDIM/2.)+1.)))*pow(R_D,NDIM); //
+    using lgamma&nbsp;&nbsp;&nbsp; &nbsp;<br>
+    <br>
+    &nbsp;&nbsp;&nbsp;&nbsp; cout &lt;&lt; NDIM &lt;&lt;" dimensions,
+    Vsphere= "&lt;&lt; Vsphere &lt;&lt; " Vtrue= " &lt;&lt; Vtrue
+    &lt;&lt;<br>
+    &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+    "&nbsp; Vtot= "&lt;&lt; Vtot &lt;&lt;" fractional error= "&lt;&lt;
+    abs(Vtrue-Vsphere)/Vtrue &lt;&lt;endl;<br>
+    <br>
+    }<br>
+    <br>
+    &nbsp;<br>
+    <div align="center"><a href="index.html">Home</a> | <a
+        href="pi.html">Lab1</a> | <a href="lab2.html">Lab2</a> | <a
+        href="lab3.html">Lab3</a> | <a href="lab4.html">Lab4</a> | <a
+        href="lab5.html">Lab5</a><br>
+    </div>
+  </body>
+</html>

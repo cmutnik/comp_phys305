@@ -1,0 +1,103 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>isotope2.html</title>
+  </head>
+  <body>
+    &nbsp; // meteor program by Corey Mutnik 2/15<br>
+    <br>
+    using namespace std;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+    #include &lt;iostream&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+    #include &lt;iomanip&gt;&nbsp;&nbsp; // required to use
+    "setprecision" if needed<br>
+    #define _USE_MATH_DEFINES&nbsp; <br>
+    #include &lt;stdio.h&gt;<br>
+    #include &lt;stdlib.h&gt;<br>
+    #include &lt;math.h&gt;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; // for
+    lgamma<br>
+    <br>
+    main()<br>
+    {<br>
+    &nbsp; <br>
+    #define M 1000000<br>
+    #define N 6000<br>
+    &nbsp;<br>
+    &nbsp; double *x, q;<br>
+    &nbsp; int *y;<br>
+    &nbsp; int i, j;<br>
+    &nbsp;<br>
+    <br>
+    // now create&nbsp; the memory with calloc, and cast it as a pointer
+    to double:<br>
+    &nbsp;&nbsp; x = (double*)calloc(M, sizeof(double));<br>
+    &nbsp;&nbsp; y = (int*)calloc(M, sizeof(int));<br>
+    &nbsp;&nbsp; <br>
+    q = 0.001;<br>
+    srand48(15485867);&nbsp;&nbsp;&nbsp; // sets seed value <br>
+    // random number where q was .01 not .001<br>
+    &nbsp;&nbsp;&nbsp; for(i=0;i&lt;M;i++){<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; x[i] =
+    drand48();&nbsp;&nbsp;&nbsp; <br>
+    <br>
+    &nbsp;&nbsp;&nbsp; y[i] = (x[i] &gt; q ? 0.0 : 1.0);<br>
+    //&nbsp;&nbsp;&nbsp; fprintf(stdout,"%d&nbsp;&nbsp;&nbsp;
+    %f&nbsp;&nbsp; %f\n", i,x[i],y[i]);<br>
+    //cout &lt;&lt; i &lt;&lt; "\t" &lt;&lt; x[i] &lt;&lt; "\t" &lt;&lt;
+    y[i] &lt;&lt; endl;<br>
+    &nbsp;&nbsp;&nbsp; }<br>
+    <br>
+    <br>
+    // this re-bins number of meteors seen per minute&nbsp;&nbsp; <br>
+    &nbsp;&nbsp;&nbsp; for(i=0; i&lt;M-N; i+=N){<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for(j=i; j&lt;i+N; j++){<br>
+    &nbsp;&nbsp;&nbsp; y[i/N]+=y[j];<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>
+    //&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cout &lt;&lt; i/N &lt;&lt; "\t"
+    &lt;&lt; y[i/N] &lt;&lt; endl;<br>
+    &nbsp;&nbsp;&nbsp; }<br>
+    <br>
+    // need to re-bin to produce Noccur VS Nmeteor hisogram<br>
+    int max = 14;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; // looking at dat
+    file the max<br>
+    &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; //
+    number of meteors seen in any one minute is 14<br>
+    int a;<br>
+    int *z;<br>
+    a = (M-N)/N;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+    // number of minutes (intervals)<br>
+    &nbsp;&nbsp;&nbsp; <br>
+    &nbsp;&nbsp; //make histogram, have to reset&nbsp; everything to
+    zero<br>
+    &nbsp;&nbsp;&nbsp; int hist[max];<br>
+    &nbsp;&nbsp;&nbsp; for(i=0; i&lt;max; i++){<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; hist[i] = 0;<br>
+    &nbsp;&nbsp;&nbsp; }<br>
+    &nbsp;&nbsp; <br>
+    &nbsp;&nbsp;&nbsp; for (i=0; i&lt;a; i++){<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; hist[y[i]]++;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp; // counter of "marbles"<br>
+    &nbsp;&nbsp;&nbsp; }<br>
+    &nbsp; <br>
+    &nbsp;&nbsp;&nbsp; for (i=0; i&lt;=max; i++){<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cout &lt;&lt; i &lt;&lt; "\t"
+    &lt;&lt; hist[i] &lt;&lt; endl;<br>
+    &nbsp;&nbsp;&nbsp; }<br>
+    &nbsp;&nbsp;&nbsp;&nbsp; <br>
+    // free memory to avoid memory leaks <br>
+    &nbsp;&nbsp;&nbsp; free(x);<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; free(y);<br>
+    &nbsp;<br>
+    &nbsp; <br>
+    }<br>
+    <div align="center"><a
+        href="file:///home/cmutnik/work/lab6/html/index.html">Home</a> |
+      <a href="file:///home/cmutnik/work/lab6/html/pi.html">Lab1</a> | <a
+        href="file:///home/cmutnik/work/lab6/html/lab2.html">Lab2</a> |
+      <a href="file:///home/cmutnik/work/lab6/html/lab3.html">Lab3</a> |
+      <a href="file:///home/cmutnik/work/lab6/html/lab4.html">Lab4</a> |
+      <a href="file:///home/cmutnik/work/lab6/html/lab5.html">Lab5</a> |
+      <a href="file:///home/cmutnik/work/lab6/html/lab6.html">Lab6</a></div>
+  </body>
+</html>

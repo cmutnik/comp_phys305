@@ -1,0 +1,8 @@
+set terminal pngcairo size 700,525 enhanced font 'Verdana,14'
+
+set border linewidth 1.5
+set style line 1 linecolor rgb '#0060ad' linetype 1 linewidth 2 # blue
+set style line 2 linecolor rgb '#dd181f' linetype 1 linewidth 2 # red
+replot
+set terminal x11
+set size 1,1

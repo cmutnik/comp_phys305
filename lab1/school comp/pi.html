@@ -1,0 +1,344 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Estimating the value of Pi (lab 1)</title>
+  </head>
+  <body alink="#EE0000" bgcolor="#ffffff" link="#0000EE"
+    text="windowtext" vlink="#551A8B">
+    <div align="right">
+      <div align="center"><b><big><big>Estimating the value of Pi</big></big></b><br>
+        Corey Mutnik<br>
+        PHYS 305<br>
+      </div>
+      <div align="center">
+        <div align="left"><a href="#Introduction:">Introduction</a><br>
+          <a href="#Code:">Code</a><br>
+          <a href="#Results:">Results</a><br>
+          <a href="#Analysis:">Analysis</a><br>
+          <a href="#Conclusion:">Conclusion</a><br>
+          <a href="#References:">References</a><br>
+          <a href="#Introduction:"></a></div>
+        <div align="left"><br>
+        </div>
+        <br>
+        <div align="left"><u><a name="Introduction:"></a>Introduction:</u><br>
+          <br>
+          &nbsp;&nbsp; In this weeks lab we attempted to estimate the
+          value of Pi using its summation notation [<a href="#ref1">1</a>].<br>
+          <div align="center">
+            <div align="left">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;<a name="eq1"></a> &nbsp;&nbsp;&nbsp; <img
+                class="mwe-math-fallback-image-inline tex"
+                alt="\sum_{n=0}^\infty \, \frac{(-1)^n}{2n+1} \;=\;
+                \frac{\pi}{4}.\!"
+src="http://upload.wikimedia.org/math/4/b/3/4b325f4142cab62b1786d8be1ac3be60.png">&nbsp;&nbsp;&nbsp;
+
+
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp; (1)<br>
+            </div>
+            <br>
+          </div>
+          This sum runs from zero to infinity, making summing it
+          impossible.&nbsp; The best estimations we can arrive at are
+          those derived using high values of n.&nbsp; The larger the
+          value of n wanted, the longer summing the series would
+          take.&nbsp; The summation displayed as <a href="#eq1">equation
+
+
+            1</a> can also be written as a Leibniz series:<br>
+          <br>
+          &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <a
+            name="leibniz_series"></a>pi/4 = 1 - 1/3 + 1/5 - 1/7 + 1/9 -
+          ...&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp; (2)<br>
+          <br>
+          &nbsp;&nbsp;&nbsp; Manually summing each successive term in
+          the series, whether by hand or using a calculator, would be a
+          grueling task.&nbsp; Using a stopwatch and a calculator I
+          found that summing the first five terms in the series took an
+          average of 29.59 seconds.&nbsp; This gives us a manual summing
+          time of roughly 6 seconds per term.&nbsp; Summing the first
+          10,000 terms in this series, using this method, would take
+          60,000 seconds (over 16 hours).&nbsp; For this reason, it
+          would be significantly more efficient to write a computer
+          program that is capable of summing the <a
+            href="#leibniz_series">Leibniz series</a>.<br>
+          <br>
+          <br>
+          <u><a name="Code:"></a>Code:</u><br>
+          <font color="#3333ff"><br>
+            // c++ program to estimate value of pi</font><br>
+          #include &lt;iostream&gt;<br>
+          #include &lt;cmath&gt;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp; <font color="#3333ff">//includes
+            math package [<a href="#ref2">2</a>]</font><br>
+          using namespace std;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <font
+            color="#3333ff">//need for all programs</font><br>
+          <br>
+          int main()<br>
+          {<br>
+          &nbsp;&nbsp;&nbsp; int k;<br>
+          &nbsp;&nbsp;&nbsp; double val=0.0 , fval;<br>
+          &nbsp;&nbsp;&nbsp; double den=1;<br>
+          &nbsp;&nbsp;&nbsp; int num;<br>
+          <br>
+          cout &lt;&lt; "Enter Number of Terms" &lt;&lt;
+          endl;&nbsp;&nbsp;&nbsp; <br>
+          cin &gt;&gt; num;<br>
+          for (k=1;k&lt;=num;k++)<br>
+          {<br>
+          <br>
+          val = val+ ( pow(-1,k+1)/den );&nbsp;&nbsp;&nbsp; <font
+            color="#3333ff">//causes the series to alternate between
+            positive and negative signs</font><br>
+          den = den+2;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <font color="#3333ff">//changes
+
+
+            the summation index, in order to generate each subsequent
+            term in series</font><br>
+          <br>
+          }<br>
+          <br>
+          fval = 4*val;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <font
+            color="#3333ff">//series is pi/4 so we multiply generated
+            answer by 4, to get the value of pi</font><br>
+          <br>
+          double err=abs(M_PI - fval);<br>
+          cout &lt;&lt; "Estimate for Pi is " &lt;&lt; fval &lt;&lt; ",
+          Associated Error " &lt;&lt; err &lt;&lt; endl;<br>
+          <br>
+          return 0;<br>
+          }<br>
+          <br>
+          <br>
+          <u><a name="Results:"></a>Results:</u><br>
+          <br>
+          <table height="382" align="center" border="1" cellpadding="2"
+            cellspacing="2" width="885">
+            <tbody>
+              <tr>
+                <td valign="top">Number of Terms Summed<br>
+                </td>
+                <td valign="top">Estimated Value of Pi<br>
+                </td>
+                <td valign="top">Error Associated (for designated number
+                  of terms)<br>
+                </td>
+              </tr>
+              <tr>
+                <td valign="top">1<br>
+                </td>
+                <td valign="top">4<br>
+                </td>
+                <td valign="top">0.858407<br>
+                </td>
+              </tr>
+              <tr>
+                <td valign="top">2<br>
+                </td>
+                <td valign="top">2.6667<br>
+                </td>
+                <td valign="top">0.474926<br>
+                </td>
+              </tr>
+              <tr>
+                <td valign="top">3<br>
+                </td>
+                <td valign="top">3.46667<br>
+                </td>
+                <td valign="top">0.325074<br>
+                </td>
+              </tr>
+              <tr>
+                <td valign="top">4<br>
+                </td>
+                <td valign="top">2.89524<br>
+                </td>
+                <td valign="top">0.246355<br>
+                </td>
+              </tr>
+              <tr>
+                <td valign="top">5<br>
+                </td>
+                <td valign="top">3.33968<br>
+                </td>
+                <td valign="top">0.19809<br>
+                </td>
+              </tr>
+              <tr>
+                <td valign="top">6<br>
+                </td>
+                <td valign="top">3.33968<br>
+                </td>
+                <td valign="top">0.165546<br>
+                </td>
+              </tr>
+              <tr>
+                <td valign="top">7<br>
+                </td>
+                <td valign="top">3.28374<br>
+                </td>
+                <td valign="top">0.142146<br>
+                </td>
+              </tr>
+              <tr>
+                <td valign="top">8<br>
+                </td>
+                <td valign="top">3.01707<br>
+                </td>
+                <td valign="top">0.124521<br>
+                </td>
+              </tr>
+              <tr>
+                <td valign="top">9<br>
+                </td>
+                <td valign="top">3.25237<br>
+                </td>
+                <td valign="top">0.110773<br>
+                </td>
+              </tr>
+              <tr>
+                <td valign="top">10<br>
+                </td>
+                <td valign="top">3.04184<br>
+                </td>
+                <td valign="top">0.099753<br>
+                </td>
+              </tr>
+              <tr>
+                <td valign="top">100<br>
+                </td>
+                <td valign="top">3.13159<br>
+                </td>
+                <td valign="top">0.00999975<br>
+                </td>
+              </tr>
+              <tr>
+                <td valign="top">1000<br>
+                </td>
+                <td valign="top">3.14059<br>
+                </td>
+                <td valign="top">0.001<br>
+                </td>
+              </tr>
+              <tr>
+                <td valign="top">10000<br>
+                </td>
+                <td valign="top">3.14149<br>
+                </td>
+                <td valign="top">0.0001<br>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div align="center"><b>Table 1: Values</b><br>
+            <br>
+            <br>
+            <a name="Figure_1"></a><img alt="Figure 1"
+              src="pi_graph.png" height="662" width="886"><br>
+            <b><a href="#Figure_1">Figure 1</a>: </b><b>Estimated
+              values of Pi</b><br>
+            <br>
+            <br>
+            <a name="Figure_2"></a><img alt="Figure 2"
+              src="pi_err_graph.png" height="623" width="833"><br>
+            <b><a href="#Figure_2">Figure 2</a>: </b><b>Error
+              associated with result for term in series</b><br>
+          </div>
+          <br>
+          <br>
+          <u><a name="Analysis:"></a>Analysis:</u><br>
+          <br>
+          &nbsp;&nbsp;&nbsp; By knowing the value of Pi, 3.1415926, we
+          are able to determine how accurate our estimates are [<a
+            href="#ref3">3</a>].&nbsp; The estimated value of Pi
+          generated using an odd number of terms was higher than the
+          expected value.&nbsp; In agreement with this; the estimated
+          value of Pi generated using an even number of terms was less
+          than the known value, as shown in <a href="#Figure_1">figure
+            1</a>.&nbsp; This is expected since the operators in the <a
+            href="#leibniz_series">Leibniz series</a> alternated between
+          addition and subtraction.&nbsp; With each term added the
+          result shown rise above the theoretical value, but by less
+          than the previous term deviated below the value of
+          pi.&nbsp;&nbsp;&nbsp; As the number of terms increased the
+          estimated value of Pi was closer to its published value,
+          causing the error to decays as 1/n, as seem in <a
+            href="#Figure_2">figure 2</a>.&nbsp; Table 1 lists the
+          values plotted in <a href="#Figure_1">figure 1</a> and <a
+            href="#Figure_2">figure 2</a>.<br>
+          <br>
+          <br>
+          <u><a name="Conclusion:"></a>Conclusion:</u><br>
+          <br>
+          &nbsp;&nbsp;&nbsp; The <a href="#leibniz_series">Leibniz
+            series</a> allowed for the calculation of Pi by means of a
+          computer program.&nbsp; Although we can never sum something
+          with infinite many terms, the error decreases inversely with
+          the number of terms summed.&nbsp; This shows that as more
+          terms in the sum are added the estimated value of Pi
+          approaches the theoretical value with a higher degree of
+          accuracy.&nbsp; While manually summing the first 10,000 terms
+          of this series would take over 16 hours, the program I wrote
+          was able to give a result before I was able to even press the
+          button necessary to start the timer.<br>
+          <br>
+          <br>
+          <u><a name="References:"></a>References:</u><br>
+          <br>
+          <a
+href="http://www.phys.hawaii.edu/%7Egorham/P305/P305_lab1.html#5._Assignment_1:_Calculating_pi_by">1</a>.
+          <a name="ref1"></a>Gorham, Peter. "Physics 305 Lab #1." <i>P305_lab1</i>.
+          Phys.hawaii.edu, 12 Jan. 2015. Web. 18 Jan. 2015.<br>
+          <br>
+          <a href="http://cpluscode.blogspot.com/p/pi-calculation.html">2.</a>
+          <a name="ref2"></a>"Learn C++." <i>: PI Calculation</i>.
+          N.p., n.d. Web. 18 Jan. 2015.<br>
+          <br>
+          <a
+            href="http://en.wikipedia.org/wiki/Leibniz_formula_for_%CF%80">3.
+
+
+          </a><a name="ref3"></a>"Leibniz Formula for π." <i>Wikipedia</i>.
+          Wikimedia Foundation, n.d. Web. 20 Jan. 2015.<br>
+          <br>
+          <br>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

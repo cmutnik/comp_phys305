@@ -1,0 +1,14 @@
+#N	volume (2D)	volume (3D)	
+10	2.8		4.8
+30	2.93333		4.8
+100	3.24		4.72
+300	3.14667		4.13333
+1000	3.136		4.248
+3000	3.17333		4.288
+10000	3.1568		4.2264
+30000	3.1416		4.22507
+
+
+#plot trial that gives best result, 
+#using the frac error to determine the best number of trials
+#300 and 30000

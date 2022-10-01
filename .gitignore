@@ -1,3 +1,7 @@
+# Local change
+.DS_Store
+other/
+
 # Prerequisites
 *.d
 

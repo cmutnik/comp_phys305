@@ -1,0 +1,2417 @@
+
+
+*******************************************************************************
+Wed Feb 18 17:41:31 2015
+
+
+FIT:    data read from 'isotope1.dat' using 1:2
+        format = x:z
+	y range restricted to [-1.00000 : 16.0000]
+        #datapoints = 2
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 549.622           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 2.92568
+
+initial set of free parameter values
+
+m               = 4
+N               = 150
+
+After 31 iterations the fit converged.
+final sum of squares of residuals : 2.62315e-31
+abs. change during last iteration : -2.16877e-30
+
+
+Exactly as many data points as there are parameters.
+In this degenerate case, all errors are zero by definition.
+
+Final set of parameters 
+======================= 
+
+m               = 0.000836802    
+N               = 149.914        
+
+
+*******************************************************************************
+Wed Feb 18 18:05:14 2015
+
+
+FIT:    data read from 'isotope1.dat' using 1:2
+        format = x:z
+	y range restricted to [-1.00000 : 16.0000]
+        #datapoints = 2
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 549.622           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 2.92568
+
+initial set of free parameter values
+
+m               = 4
+N               = 150
+
+After 31 iterations the fit converged.
+final sum of squares of residuals : 2.62315e-31
+abs. change during last iteration : -2.16877e-30
+
+
+Exactly as many data points as there are parameters.
+In this degenerate case, all errors are zero by definition.
+
+Final set of parameters 
+======================= 
+
+m               = 0.000836802    
+N               = 149.914        
+
+
+*******************************************************************************
+Wed Feb 18 18:06:11 2015
+
+
+FIT:    data read from 'isotope1.dat' using 1:2
+        format = x:z
+        #datapoints = 1000
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+BREAK:          Undefined value during function evaluation
+
+
+
+*******************************************************************************
+Wed Feb 18 18:06:22 2015
+
+
+FIT:    data read from 'isotope1.dat' using 1:2
+        format = x:z
+        #datapoints = 1000
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+BREAK:          Undefined value during function evaluation
+
+
+
+*******************************************************************************
+Wed Feb 18 20:07:19 2015
+
+
+FIT:    data read from 'isotope1.dat' u 1:2:(sqrt($2+1))
+        format = x:z:s
+        #datapoints = 120
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+*******************************************************************************
+Wed Feb 18 20:09:19 2015
+
+
+FIT:    data read from 'isotope1.dat' u 1:2:(sqrt($2+1))
+        format = x:z:s
+        #datapoints = 120
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 99.0633           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 0.0277457
+
+initial set of free parameter values
+
+no              = 1
+tau             = 100
+
+After 4 iterations the fit converged.
+final sum of squares of residuals : 85.1982
+rel. change during last iteration : -3.43074e-07
+
+degrees of freedom    (FIT_NDF)                        : 118
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.849717
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.722019
+
+BREAK:          Singular matrix in Invert_RtR
+
+
+
+*******************************************************************************
+Wed Feb 18 20:09:52 2015
+
+
+FIT:    data read from 'isotope1.dat' u 1:2:(sqrt($2+1))
+        format = x:z:s
+        #datapoints = 120
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 99.0633           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 0.0277457
+
+initial set of free parameter values
+
+no              = 1
+tau             = 100
+
+After 4 iterations the fit converged.
+final sum of squares of residuals : 85.1982
+rel. change during last iteration : -3.43074e-07
+
+degrees of freedom    (FIT_NDF)                        : 118
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.849717
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.722019
+
+BREAK:          Singular matrix in Invert_RtR
+
+
+
+*******************************************************************************
+Wed Feb 18 20:10:31 2015
+
+
+FIT:    data read from 'isotope1.dat' u 1:2:(sqrt($2+1))
+        format = x:z:s
+        #datapoints = 120
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 99.0633           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 0.0277457
+
+initial set of free parameter values
+
+no              = 1
+tau             = 100
+
+After 4 iterations the fit converged.
+final sum of squares of residuals : 85.1982
+rel. change during last iteration : -3.43074e-07
+
+degrees of freedom    (FIT_NDF)                        : 118
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.849717
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.722019
+
+BREAK:          Singular matrix in Invert_RtR
+
+
+
+*******************************************************************************
+Wed Feb 18 20:10:34 2015
+
+
+FIT:    data read from 'isotope1.dat' u 1:2:(sqrt($2+1))
+        format = x:z:s
+        #datapoints = 120
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 99.0633           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 0.0277457
+
+initial set of free parameter values
+
+no              = 1
+tau             = 100
+
+After 4 iterations the fit converged.
+final sum of squares of residuals : 85.1982
+rel. change during last iteration : -3.43074e-07
+
+degrees of freedom    (FIT_NDF)                        : 118
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.849717
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.722019
+
+BREAK:          Singular matrix in Invert_RtR
+
+
+
+*******************************************************************************
+Wed Feb 18 20:10:40 2015
+
+
+FIT:    data read from 'isotope1.dat' u 1:2:(sqrt($2+1))
+        format = x:z:s
+        #datapoints = 120
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 99.0633           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 0.0277457
+
+initial set of free parameter values
+
+no              = 1
+tau             = 100
+
+After 4 iterations the fit converged.
+final sum of squares of residuals : 85.1982
+rel. change during last iteration : -3.43074e-07
+
+degrees of freedom    (FIT_NDF)                        : 118
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.849717
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.722019
+
+BREAK:          Singular matrix in Invert_RtR
+
+
+
+*******************************************************************************
+Wed Feb 18 20:11:10 2015
+
+
+FIT:    data read from 'isotope1.dat' u 1:2:(sqrt($2+1))
+        format = x:z:s
+        #datapoints = 120
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 99.0633           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 0.027783
+
+initial set of free parameter values
+
+No              = 2000
+tau             = 100
+
+After 3 iterations the fit converged.
+final sum of squares of residuals : 82.4683
+rel. change during last iteration : -7.715e-06
+
+degrees of freedom    (FIT_NDF)                        : 118
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.835993
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.698884
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+No              = 1925.89          +/- 37.5         (1.947%)
+tau             = 91.5855          +/- 1.947        (2.126%)
+
+
+correlation matrix of the fit parameters:
+
+               No     tau    
+No              1.000 
+tau             0.081  1.000 
+
+
+*******************************************************************************
+Wed Feb 18 20:11:24 2015
+
+
+FIT:    data read from 'isotope1.dat' u 1:2:(sqrt($2+1))
+        format = x:z:s
+        #datapoints = 120
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 99.0633           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 0.027783
+
+initial set of free parameter values
+
+No              = 2000
+tau             = 100
+
+After 3 iterations the fit converged.
+final sum of squares of residuals : 82.4683
+rel. change during last iteration : -7.715e-06
+
+degrees of freedom    (FIT_NDF)                        : 118
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.835993
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.698884
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+No              = 1925.89          +/- 37.5         (1.947%)
+tau             = 91.5855          +/- 1.947        (2.126%)
+
+
+correlation matrix of the fit parameters:
+
+               No     tau    
+No              1.000 
+tau             0.081  1.000 
+
+
+*******************************************************************************
+Wed Feb 18 20:11:47 2015
+
+
+FIT:    data read from 'isotope1.dat' u 1:2:(sqrt($2+1))
+        format = x:z:s
+        #datapoints = 120
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 99.0633           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 0.027783
+
+initial set of free parameter values
+
+No              = 2000
+tau             = 100
+
+After 3 iterations the fit converged.
+final sum of squares of residuals : 82.4683
+rel. change during last iteration : -7.715e-06
+
+degrees of freedom    (FIT_NDF)                        : 118
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.835993
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.698884
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+No              = 1925.89          +/- 37.5         (1.947%)
+tau             = 91.5855          +/- 1.947        (2.126%)
+
+
+correlation matrix of the fit parameters:
+
+               No     tau    
+No              1.000 
+tau             0.081  1.000 
+
+
+*******************************************************************************
+Wed Feb 18 20:12:36 2015
+
+
+FIT:    data read from 'isotope1.dat' u 1:2:(1+(sqrt($2+1)))
+        format = x:z:s
+        #datapoints = 120
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 47.8756           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 0.0205604
+
+initial set of free parameter values
+
+No              = 2000
+tau             = 100
+
+After 3 iterations the fit converged.
+final sum of squares of residuals : 44.9756
+rel. change during last iteration : -6.2952e-07
+
+degrees of freedom    (FIT_NDF)                        : 118
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.617373
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.381149
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+No              = 1951.9           +/- 32.35        (1.658%)
+tau             = 95.1045          +/- 1.947        (2.047%)
+
+
+correlation matrix of the fit parameters:
+
+               No     tau    
+No              1.000 
+tau             0.212  1.000 
+
+
+*******************************************************************************
+Wed Feb 18 20:12:43 2015
+
+
+FIT:    data read from 'isotope1.dat' u 1:2:(1+(sqrt($2+1)))
+        format = x:z:s
+        #datapoints = 120
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 47.8756           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 0.0205604
+
+initial set of free parameter values
+
+No              = 2000
+tau             = 100
+
+After 3 iterations the fit converged.
+final sum of squares of residuals : 44.9756
+rel. change during last iteration : -6.2952e-07
+
+degrees of freedom    (FIT_NDF)                        : 118
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.617373
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.381149
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+No              = 1951.9           +/- 32.35        (1.658%)
+tau             = 95.1045          +/- 1.947        (2.047%)
+
+
+correlation matrix of the fit parameters:
+
+               No     tau    
+No              1.000 
+tau             0.212  1.000 
+
+
+*******************************************************************************
+Wed Feb 18 20:13:37 2015
+
+
+FIT:    data read from 'isotope1.dat' u 1:2:(1+(sqrt($2+1)))
+        format = x:z:s
+        #datapoints = 120
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 47.8756           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 0.0205604
+
+initial set of free parameter values
+
+No              = 2000
+tau             = 100
+
+After 3 iterations the fit converged.
+final sum of squares of residuals : 44.9756
+rel. change during last iteration : -6.2952e-07
+
+degrees of freedom    (FIT_NDF)                        : 118
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.617373
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.381149
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+No              = 1951.9           +/- 32.35        (1.658%)
+tau             = 95.1045          +/- 1.947        (2.047%)
+
+
+correlation matrix of the fit parameters:
+
+               No     tau    
+No              1.000 
+tau             0.212  1.000 
+
+
+*******************************************************************************
+Wed Feb 18 20:13:41 2015
+
+
+FIT:    data read from 'isotope1.dat' u 1:2:(1+(sqrt($2+1)))
+        format = x:z:s
+        #datapoints = 120
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 47.8756           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 0.0205604
+
+initial set of free parameter values
+
+No              = 2000
+tau             = 100
+
+After 3 iterations the fit converged.
+final sum of squares of residuals : 44.9756
+rel. change during last iteration : -6.2952e-07
+
+degrees of freedom    (FIT_NDF)                        : 118
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.617373
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.381149
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+No              = 1951.9           +/- 32.35        (1.658%)
+tau             = 95.1045          +/- 1.947        (2.047%)
+
+
+correlation matrix of the fit parameters:
+
+               No     tau    
+No              1.000 
+tau             0.212  1.000 
+
+
+*******************************************************************************
+Wed Feb 18 23:51:57 2015
+
+
+FIT:    data read from 'isotope2_1000.dat' u 1:6:(1+(sqrt($6+1)))
+        format = x:z:s
+        #datapoints = 1800
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 328.182           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 0.0192368
+
+initial set of free parameter values
+
+No              = 1000
+tau             = 19
+
+After 4 iterations the fit converged.
+final sum of squares of residuals : 320.178
+rel. change during last iteration : -1.12006e-06
+
+degrees of freedom    (FIT_NDF)                        : 1798
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.421989
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.178075
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+No              = 1077.06          +/- 15.4         (1.429%)
+tau             = 21.2061          +/- 0.3794       (1.789%)
+
+
+correlation matrix of the fit parameters:
+
+               No     tau    
+No              1.000 
+tau             0.124  1.000 
+
+
+*******************************************************************************
+Wed Feb 18 23:52:38 2015
+
+
+FIT:    data read from 'isotope2_1000.dat' u 1:6:(1+(sqrt($6+1)))
+        format = x:z:s
+        #datapoints = 1800
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 328.182           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 0.0192368
+
+initial set of free parameter values
+
+No              = 1000
+tau             = 19
+
+After 4 iterations the fit converged.
+final sum of squares of residuals : 320.178
+rel. change during last iteration : -1.12006e-06
+
+degrees of freedom    (FIT_NDF)                        : 1798
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.421989
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.178075
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+No              = 1077.06          +/- 15.4         (1.429%)
+tau             = 21.2061          +/- 0.3794       (1.789%)
+
+
+correlation matrix of the fit parameters:
+
+               No     tau    
+No              1.000 
+tau             0.124  1.000 
+
+
+*******************************************************************************
+Wed Feb 18 23:53:59 2015
+
+
+FIT:    data read from 'isotope2_1000.dat' u 1:6:(1+(sqrt($6+1)))
+        format = x:z:s
+	y range restricted to [0.00000 : 1000.00]
+        #datapoints = 100
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 171.622           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 0.081615
+
+initial set of free parameter values
+
+No              = 1000
+tau             = 19
+
+After 4 iterations the fit converged.
+final sum of squares of residuals : 163.617
+rel. change during last iteration : -4.00264e-06
+
+degrees of freedom    (FIT_NDF)                        : 98
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 1.29212
+variance of residuals (reduced chisquare) = WSSR/ndf   : 1.66957
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+No              = 1077.05          +/- 47.14        (4.377%)
+tau             = 21.2047          +/- 1.162        (5.478%)
+
+
+correlation matrix of the fit parameters:
+
+               No     tau    
+No              1.000 
+tau             0.124  1.000 
+
+
+*******************************************************************************
+Wed Feb 18 23:54:13 2015
+
+
+FIT:    data read from 'isotope2_1000.dat' u 1:6:(1+(sqrt($6+1)))
+        format = x:z:s
+	y range restricted to [0.00000 : 1000.00]
+        #datapoints = 100
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 171.622           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 0.081615
+
+initial set of free parameter values
+
+No              = 1000
+tau             = 19
+
+After 4 iterations the fit converged.
+final sum of squares of residuals : 163.617
+rel. change during last iteration : -4.00264e-06
+
+degrees of freedom    (FIT_NDF)                        : 98
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 1.29212
+variance of residuals (reduced chisquare) = WSSR/ndf   : 1.66957
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+No              = 1077.05          +/- 47.14        (4.377%)
+tau             = 21.2047          +/- 1.162        (5.478%)
+
+
+correlation matrix of the fit parameters:
+
+               No     tau    
+No              1.000 
+tau             0.124  1.000 
+
+
+*******************************************************************************
+Wed Feb 18 23:54:37 2015
+
+
+FIT:    data read from 'isotope2_1000.dat' u 1:6:(1+(sqrt($6+1)))
+        format = x:z:s
+        #datapoints = 1800
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 328.182           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 0.0192368
+
+initial set of free parameter values
+
+No              = 1000
+tau             = 19
+
+After 4 iterations the fit converged.
+final sum of squares of residuals : 320.178
+rel. change during last iteration : -1.12006e-06
+
+degrees of freedom    (FIT_NDF)                        : 1798
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.421989
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.178075
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+No              = 1077.06          +/- 15.4         (1.429%)
+tau             = 21.2061          +/- 0.3794       (1.789%)
+
+
+correlation matrix of the fit parameters:
+
+               No     tau    
+No              1.000 
+tau             0.124  1.000 
+
+
+*******************************************************************************
+Wed Feb 18 23:56:06 2015
+
+
+FIT:    data read from 'isotope2_1000.dat' u 1:6:(1+(sqrt($6+1)))
+        format = x:z:s
+	y range restricted to [0.00000 : 1000.00]
+        #datapoints = 100
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 171.622           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 0.081615
+
+initial set of free parameter values
+
+No              = 1000
+tau             = 19
+
+After 4 iterations the fit converged.
+final sum of squares of residuals : 163.617
+rel. change during last iteration : -4.00264e-06
+
+degrees of freedom    (FIT_NDF)                        : 98
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 1.29212
+variance of residuals (reduced chisquare) = WSSR/ndf   : 1.66957
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+No              = 1077.05          +/- 47.14        (4.377%)
+tau             = 21.2047          +/- 1.162        (5.478%)
+
+
+correlation matrix of the fit parameters:
+
+               No     tau    
+No              1.000 
+tau             0.124  1.000 
+
+
+*******************************************************************************
+Wed Feb 18 23:56:18 2015
+
+
+FIT:    data read from 'isotope2_1000.dat' u 1:6:(1+(sqrt($6+1)))
+        format = x:z:s
+	y range restricted to [0.00000 : 1000.00]
+        #datapoints = 100
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 171.622           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 0.081615
+
+initial set of free parameter values
+
+No              = 1000
+tau             = 19
+
+After 4 iterations the fit converged.
+final sum of squares of residuals : 163.617
+rel. change during last iteration : -4.00264e-06
+
+degrees of freedom    (FIT_NDF)                        : 98
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 1.29212
+variance of residuals (reduced chisquare) = WSSR/ndf   : 1.66957
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+No              = 1077.05          +/- 47.14        (4.377%)
+tau             = 21.2047          +/- 1.162        (5.478%)
+
+
+correlation matrix of the fit parameters:
+
+               No     tau    
+No              1.000 
+tau             0.124  1.000 
+
+
+*******************************************************************************
+Wed Feb 18 23:56:54 2015
+
+
+FIT:    data read from 'isotope2_1000.dat' u 1:6:(1+(sqrt($6+1)))
+        format = x:z:s
+	y range restricted to [0.00000 : 1000.00]
+        #datapoints = 100
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 171.622           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 0.081615
+
+initial set of free parameter values
+
+No              = 1000
+tau             = 19
+
+After 4 iterations the fit converged.
+final sum of squares of residuals : 163.617
+rel. change during last iteration : -4.00264e-06
+
+degrees of freedom    (FIT_NDF)                        : 98
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 1.29212
+variance of residuals (reduced chisquare) = WSSR/ndf   : 1.66957
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+No              = 1077.05          +/- 47.14        (4.377%)
+tau             = 21.2047          +/- 1.162        (5.478%)
+
+
+correlation matrix of the fit parameters:
+
+               No     tau    
+No              1.000 
+tau             0.124  1.000 
+
+
+*******************************************************************************
+Wed Feb 18 23:57:23 2015
+
+
+FIT:    data read from 'isotope2_1000.dat' u 1:6:(1+(sqrt($6+1)))
+        format = x:z:s
+	y range restricted to [0.00000 : 1000.00]
+        #datapoints = 100
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 171.622           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 0.081615
+
+initial set of free parameter values
+
+No              = 1000
+tau             = 19
+
+After 4 iterations the fit converged.
+final sum of squares of residuals : 163.617
+rel. change during last iteration : -4.00264e-06
+
+degrees of freedom    (FIT_NDF)                        : 98
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 1.29212
+variance of residuals (reduced chisquare) = WSSR/ndf   : 1.66957
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+No              = 1077.05          +/- 47.14        (4.377%)
+tau             = 21.2047          +/- 1.162        (5.478%)
+
+
+correlation matrix of the fit parameters:
+
+               No     tau    
+No              1.000 
+tau             0.124  1.000 
+
+
+*******************************************************************************
+Wed Feb 18 23:58:28 2015
+
+
+FIT:    data read from 'isotope2_1000.dat' u 1:6:(1+(sqrt($6+1)))
+        format = x:z:s
+	y range restricted to [0.00000 : 1000.00]
+        #datapoints = 100
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 838.854           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 0.00105262
+
+initial set of free parameter values
+
+No              = 1000
+tau             = 1221
+BREAK:          Undefined value during function evaluation
+
+
+
+*******************************************************************************
+Wed Feb 18 23:59:36 2015
+
+
+FIT:    data read from 'isotope2_1000.dat' u 1:6:(1+(sqrt($6+1)))
+        format = x:z:s
+	y range restricted to [0.00000 : 1000.00]
+        #datapoints = 100
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 838.854           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 0.00105262
+
+initial set of free parameter values
+
+No              = 1000
+tau             = 1221
+BREAK:          Undefined value during function evaluation
+
+
+
+*******************************************************************************
+Thu Feb 19 00:00:12 2015
+
+
+FIT:    data read from 'isotope2_1000.dat' u 1:2:(1+(sqrt($2+1)))
+        format = x:z:s
+	y range restricted to [0.00000 : 1000.00]
+        #datapoints = 100
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 1120.65           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 0.00163261
+
+initial set of free parameter values
+
+No              = 1000
+tau             = 1221
+
+After 10 iterations the fit converged.
+final sum of squares of residuals : 827.393
+rel. change during last iteration : -2.31153e-06
+
+degrees of freedom    (FIT_NDF)                        : 98
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 2.90565
+variance of residuals (reduced chisquare) = WSSR/ndf   : 8.44278
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+No              = 1045.62          +/- 1.369e+05    (1.309e+04%)
+tau             = 16444.3          +/- 2.207e+06    (1.342e+04%)
+
+
+correlation matrix of the fit parameters:
+
+               No     tau    
+No              1.000 
+tau             1.000  1.000 
+
+
+*******************************************************************************
+Thu Feb 19 00:01:49 2015
+
+
+FIT:    data read from 'isotope2_1000.dat' u 1:7:(1+(sqrt($7+1)))
+        format = x:z:s
+	y range restricted to [0.00000 : 1000.00]
+        #datapoints = 100
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 168715            delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 8.41861e-05
+
+initial set of free parameter values
+
+No              = 1000
+tau             = 1221
+
+After 17 iterations the fit converged.
+final sum of squares of residuals : 288.273
+rel. change during last iteration : -2.50896e-09
+
+degrees of freedom    (FIT_NDF)                        : 98
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 1.7151
+variance of residuals (reduced chisquare) = WSSR/ndf   : 2.94156
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+No              = 657569           +/- 2.617e+04    (3.979%)
+tau             = 2203.57          +/- 102.5        (4.653%)
+
+
+correlation matrix of the fit parameters:
+
+               No     tau    
+No              1.000 
+tau             0.994  1.000 
+
+
+*******************************************************************************
+Thu Feb 19 00:02:33 2015
+
+
+FIT:    data read from 'isotope1.dat' u 1:2:(1+(sqrt($2+1)))
+        format = x:z:s
+        #datapoints = 120
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 47.8756           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 0.0205604
+
+initial set of free parameter values
+
+No              = 2000
+tau             = 100
+
+After 3 iterations the fit converged.
+final sum of squares of residuals : 44.9756
+rel. change during last iteration : -6.2952e-07
+
+degrees of freedom    (FIT_NDF)                        : 118
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.617373
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.381149
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+No              = 1951.9           +/- 32.35        (1.658%)
+tau             = 95.1045          +/- 1.947        (2.047%)
+
+
+correlation matrix of the fit parameters:
+
+               No     tau    
+No              1.000 
+tau             0.212  1.000 
+
+
+*******************************************************************************
+Thu Feb 19 00:02:43 2015
+
+
+FIT:    data read from 'isotope2_1000.dat' u 1:6:(1+(sqrt($6+1)))
+        format = x:z:s
+	y range restricted to [0.00000 : 1000.00]
+        #datapoints = 100
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 171.622           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 0.081615
+
+initial set of free parameter values
+
+No              = 1000
+tau             = 19
+
+After 4 iterations the fit converged.
+final sum of squares of residuals : 163.617
+rel. change during last iteration : -4.00264e-06
+
+degrees of freedom    (FIT_NDF)                        : 98
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 1.29212
+variance of residuals (reduced chisquare) = WSSR/ndf   : 1.66957
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+No              = 1077.05          +/- 47.14        (4.377%)
+tau             = 21.2047          +/- 1.162        (5.478%)
+
+
+correlation matrix of the fit parameters:
+
+               No     tau    
+No              1.000 
+tau             0.124  1.000 
+
+
+*******************************************************************************
+Thu Feb 19 00:06:09 2015
+
+
+FIT:    data read from 'isotope2_1000.dat' u 1:6:(1+(sqrt($6+1)))
+        format = x:z:s
+	y range restricted to [0.00000 : 1000.00]
+        #datapoints = 100
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 54.4371           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 0.00227854
+
+initial set of free parameter values
+
+No              = 1000
+tau             = 21.2047
+
+After 2 iterations the fit converged.
+final sum of squares of residuals : 53.9697
+rel. change during last iteration : -2.14369e-07
+
+degrees of freedom    (FIT_NDF)                        : 98
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.742099
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.550711
+
+BREAK:          Singular matrix in Invert_RtR
+
+
+
+*******************************************************************************
+Thu Feb 19 00:06:28 2015
+
+
+FIT:    data read from 'isotope2_1000.dat' u 1:6:(1+(sqrt($6+1)))
+        format = x:z:s
+	y range restricted to [0.00000 : 1000.00]
+        #datapoints = 100
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 54.4371           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 0.0666462
+
+initial set of free parameter values
+
+No              = 1000
+tau10           = 19
+tau11           = 1221
+
+After 5 iterations the fit converged.
+final sum of squares of residuals : 51.1104
+rel. change during last iteration : -3.10475e-08
+
+degrees of freedom    (FIT_NDF)                        : 97
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.725886
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.526911
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+No              = 1008.58          +/- 27.25        (2.702%)
+tau10           = 18.7249          +/- 0.6499       (3.471%)
+tau11           = 1499.33          +/- 152.6        (10.18%)
+
+
+correlation matrix of the fit parameters:
+
+               No     tau10  tau11  
+No              1.000 
+tau10           0.241  1.000 
+tau11           0.519  0.309  1.000 
+
+
+*******************************************************************************
+Thu Feb 19 00:06:58 2015
+
+
+FIT:    data read from 'isotope2_1000.dat' u 1:6:(1+(sqrt($6+1)))
+        format = x:z:s
+	y range restricted to [0.00000 : 1000.00]
+        #datapoints = 100
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 54.4371           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 0.0666462
+
+initial set of free parameter values
+
+No              = 1000
+tau10           = 19
+tau11           = 1221
+
+After 5 iterations the fit converged.
+final sum of squares of residuals : 51.1104
+rel. change during last iteration : -3.10475e-08
+
+degrees of freedom    (FIT_NDF)                        : 97
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.725886
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.526911
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+No              = 1008.58          +/- 27.25        (2.702%)
+tau10           = 18.7249          +/- 0.6499       (3.471%)
+tau11           = 1499.33          +/- 152.6        (10.18%)
+
+
+correlation matrix of the fit parameters:
+
+               No     tau10  tau11  
+No              1.000 
+tau10           0.241  1.000 
+tau11           0.519  0.309  1.000 
+
+
+*******************************************************************************
+Thu Feb 19 00:08:26 2015
+
+
+FIT:    data read from 'isotope2_1000.dat' u 1:6:(1+(sqrt($6+1)))
+        format = x:z:s
+	y range restricted to [0.00000 : 1000.00]
+        #datapoints = 100
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 54.4371           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 0.0666462
+
+initial set of free parameter values
+
+No              = 1000
+tau10           = 19
+tau11           = 1221
+
+After 5 iterations the fit converged.
+final sum of squares of residuals : 51.1104
+rel. change during last iteration : -3.10475e-08
+
+degrees of freedom    (FIT_NDF)                        : 97
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.725886
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.526911
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+No              = 1008.58          +/- 27.25        (2.702%)
+tau10           = 18.7249          +/- 0.6499       (3.471%)
+tau11           = 1499.33          +/- 152.6        (10.18%)
+
+
+correlation matrix of the fit parameters:
+
+               No     tau10  tau11  
+No              1.000 
+tau10           0.241  1.000 
+tau11           0.519  0.309  1.000 
+
+
+*******************************************************************************
+Thu Feb 19 00:10:13 2015
+
+
+FIT:    data read from 'isotope2_1000.dat' u 1:6:(1+(sqrt($6+1)))
+        format = x:z:s
+        #datapoints = 1800
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 137.783           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 0.0157097
+
+initial set of free parameter values
+
+No              = 1000
+tau10           = 19
+tau11           = 1221
+
+After 3 iterations the fit converged.
+final sum of squares of residuals : 134.555
+rel. change during last iteration : -1.275e-06
+
+degrees of freedom    (FIT_NDF)                        : 1797
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.273637
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.0748774
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+No              = 952.081          +/- 8.622        (0.9056%)
+tau10           = 18.2044          +/- 0.2469       (1.356%)
+tau11           = 1215.97          +/- 33.15        (2.727%)
+
+
+correlation matrix of the fit parameters:
+
+               No     tau10  tau11  
+No              1.000 
+tau10           0.170  1.000 
+tau11           0.374  0.235  1.000 
+
+
+*******************************************************************************
+Thu Feb 19 00:11:58 2015
+
+
+FIT:    data read from 'isotope2_1000.dat' u 1:6:(1+(sqrt($6+1)))
+        format = x:z:s
+        #datapoints = 1800
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 198.864           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 0.0157677
+
+initial set of free parameter values
+
+No              = 1000
+tau10           = 19
+tau11           = 1221
+
+After 6 iterations the fit converged.
+final sum of squares of residuals : 134.555
+rel. change during last iteration : -3.01739e-07
+
+degrees of freedom    (FIT_NDF)                        : 1797
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.273637
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.0748774
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+No              = 952.03           +/- 8.622        (0.9057%)
+tau10           = 26.262           +/- 0.3562       (1.356%)
+tau11           = 1753.53          +/- 47.81        (2.726%)
+
+
+correlation matrix of the fit parameters:
+
+               No     tau10  tau11  
+No              1.000 
+tau10           0.170  1.000 
+tau11           0.374  0.235  1.000 
+
+
+*******************************************************************************
+Thu Feb 19 00:15:36 2015
+
+
+FIT:    data read from 'isotope2_1000.dat' u 1:6:(1+(sqrt($6+1)))
+        format = x:z:s
+	y range restricted to [0.00000 : 1000.00]
+        #datapoints = 100
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 54.4371           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 0.0666462
+
+initial set of free parameter values
+
+No              = 1000
+tau10           = 19
+tau11           = 1221
+
+After 5 iterations the fit converged.
+final sum of squares of residuals : 51.1104
+rel. change during last iteration : -3.10475e-08
+
+degrees of freedom    (FIT_NDF)                        : 97
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.725886
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.526911
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+No              = 1008.58          +/- 27.25        (2.702%)
+tau10           = 18.7249          +/- 0.6499       (3.471%)
+tau11           = 1499.33          +/- 152.6        (10.18%)
+
+
+correlation matrix of the fit parameters:
+
+               No     tau10  tau11  
+No              1.000 
+tau10           0.241  1.000 
+tau11           0.519  0.309  1.000 
+
+
+*******************************************************************************
+Thu Feb 19 00:16:05 2015
+
+
+FIT:    data read from 'isotope2_1000.dat' u 1:6:(1+(sqrt($6+1)))
+        format = x:z:s
+	y range restricted to [0.00000 : 1000.00]
+        #datapoints = 100
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 54.4371           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 0.0666462
+
+initial set of free parameter values
+
+No              = 1000
+tau10           = 19
+tau11           = 1221
+
+After 5 iterations the fit converged.
+final sum of squares of residuals : 51.1104
+rel. change during last iteration : -3.10475e-08
+
+degrees of freedom    (FIT_NDF)                        : 97
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.725886
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.526911
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+No              = 1008.58          +/- 27.25        (2.702%)
+tau10           = 18.7249          +/- 0.6499       (3.471%)
+tau11           = 1499.33          +/- 152.6        (10.18%)
+
+
+correlation matrix of the fit parameters:
+
+               No     tau10  tau11  
+No              1.000 
+tau10           0.241  1.000 
+tau11           0.519  0.309  1.000 
+
+
+*******************************************************************************
+Thu Feb 19 00:16:35 2015
+
+
+FIT:    data read from 'isotope2_1000.dat' u 1:6:(1+(sqrt($6+1)))
+        format = x:z:s
+	y range restricted to [0.00000 : 1000.00]
+        #datapoints = 100
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 54.4371           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 0.0666462
+
+initial set of free parameter values
+
+No              = 1000
+tau10           = 19
+tau11           = 1221
+
+After 5 iterations the fit converged.
+final sum of squares of residuals : 51.1104
+rel. change during last iteration : -3.10475e-08
+
+degrees of freedom    (FIT_NDF)                        : 97
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.725886
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.526911
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+No              = 1008.58          +/- 27.25        (2.702%)
+tau10           = 18.7249          +/- 0.6499       (3.471%)
+tau11           = 1499.33          +/- 152.6        (10.18%)
+
+
+correlation matrix of the fit parameters:
+
+               No     tau10  tau11  
+No              1.000 
+tau10           0.241  1.000 
+tau11           0.519  0.309  1.000 
+
+
+*******************************************************************************
+Thu Feb 19 00:17:26 2015
+
+
+FIT:    data read from 'isotope2_1000.dat' u 1:6:(1+(sqrt($6+1)))
+        format = x:z:s
+	y range restricted to [0.00000 : 1000.00]
+        #datapoints = 100
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 54.4371           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 0.0666462
+
+initial set of free parameter values
+
+No              = 1000
+tau10           = 19
+tau11           = 1221
+
+After 5 iterations the fit converged.
+final sum of squares of residuals : 51.1104
+rel. change during last iteration : -3.10475e-08
+
+degrees of freedom    (FIT_NDF)                        : 97
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.725886
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.526911
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+No              = 1008.58          +/- 27.25        (2.702%)
+tau10           = 18.7249          +/- 0.6499       (3.471%)
+tau11           = 1499.33          +/- 152.6        (10.18%)
+
+
+correlation matrix of the fit parameters:
+
+               No     tau10  tau11  
+No              1.000 
+tau10           0.241  1.000 
+tau11           0.519  0.309  1.000 
+
+
+*******************************************************************************
+Thu Feb 19 00:17:40 2015
+
+
+FIT:    data read from 'isotope2_1000.dat' u 1:6:(1+(sqrt($6+1)))
+        format = x:z:s
+	y range restricted to [0.00000 : 1000.00]
+        #datapoints = 100
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 54.4371           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 0.0666462
+
+initial set of free parameter values
+
+No              = 1000
+tau10           = 19
+tau11           = 1221
+
+After 5 iterations the fit converged.
+final sum of squares of residuals : 51.1104
+rel. change during last iteration : -3.10475e-08
+
+degrees of freedom    (FIT_NDF)                        : 97
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.725886
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.526911
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+No              = 1008.58          +/- 27.25        (2.702%)
+tau10           = 18.7249          +/- 0.6499       (3.471%)
+tau11           = 1499.33          +/- 152.6        (10.18%)
+
+
+correlation matrix of the fit parameters:
+
+               No     tau10  tau11  
+No              1.000 
+tau10           0.241  1.000 
+tau11           0.519  0.309  1.000 
+
+
+*******************************************************************************
+Thu Feb 19 00:18:00 2015
+
+
+FIT:    data read from 'isotope2_1000.dat' u 1:6:(1+(sqrt($6+1)))
+        format = x:z:s
+	y range restricted to [0.00000 : 1000.00]
+        #datapoints = 100
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 54.4371           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 0.0666462
+
+initial set of free parameter values
+
+No              = 1000
+tau10           = 19
+tau11           = 1221
+
+After 5 iterations the fit converged.
+final sum of squares of residuals : 51.1104
+rel. change during last iteration : -3.10475e-08
+
+degrees of freedom    (FIT_NDF)                        : 97
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.725886
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.526911
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+No              = 1008.58          +/- 27.25        (2.702%)
+tau10           = 18.7249          +/- 0.6499       (3.471%)
+tau11           = 1499.33          +/- 152.6        (10.18%)
+
+
+correlation matrix of the fit parameters:
+
+               No     tau10  tau11  
+No              1.000 
+tau10           0.241  1.000 
+tau11           0.519  0.309  1.000 
+
+
+*******************************************************************************
+Thu Feb 19 00:18:42 2015
+
+
+FIT:    data read from 'isotope2_1000.dat' u 1:6:(1+(sqrt($6+1)))
+        format = x:z:s
+	y range restricted to [0.00000 : 1000.00]
+        #datapoints = 100
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 54.4371           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 0.0666462
+
+initial set of free parameter values
+
+No              = 1000
+tau10           = 19
+tau11           = 1221
+
+After 5 iterations the fit converged.
+final sum of squares of residuals : 51.1104
+rel. change during last iteration : -3.10475e-08
+
+degrees of freedom    (FIT_NDF)                        : 97
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.725886
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.526911
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+No              = 1008.58          +/- 27.25        (2.702%)
+tau10           = 18.7249          +/- 0.6499       (3.471%)
+tau11           = 1499.33          +/- 152.6        (10.18%)
+
+
+correlation matrix of the fit parameters:
+
+               No     tau10  tau11  
+No              1.000 
+tau10           0.241  1.000 
+tau11           0.519  0.309  1.000 
+
+
+*******************************************************************************
+Thu Feb 19 00:19:06 2015
+
+
+FIT:    data read from 'isotope2_1000.dat' u 1:6:(1+(sqrt($6+1)))
+        format = x:z:s
+	y range restricted to [0.00000 : 1000.00]
+        #datapoints = 100
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 54.4371           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 0.0666462
+
+initial set of free parameter values
+
+No              = 1000
+tau10           = 19
+tau11           = 1221
+
+After 5 iterations the fit converged.
+final sum of squares of residuals : 51.1104
+rel. change during last iteration : -3.10475e-08
+
+degrees of freedom    (FIT_NDF)                        : 97
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.725886
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.526911
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+No              = 1008.58          +/- 27.25        (2.702%)
+tau10           = 18.7249          +/- 0.6499       (3.471%)
+tau11           = 1499.33          +/- 152.6        (10.18%)
+
+
+correlation matrix of the fit parameters:
+
+               No     tau10  tau11  
+No              1.000 
+tau10           0.241  1.000 
+tau11           0.519  0.309  1.000 
+
+
+*******************************************************************************
+Thu Feb 19 00:19:34 2015
+
+
+FIT:    data read from 'isotope2_1000.dat' u 1:6:(1+(sqrt($6+1)))
+        format = x:z:s
+	y range restricted to [0.00000 : 1000.00]
+        #datapoints = 100
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 54.4371           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 0.0666462
+
+initial set of free parameter values
+
+No              = 1000
+tau10           = 19
+tau11           = 1221
+
+After 5 iterations the fit converged.
+final sum of squares of residuals : 51.1104
+rel. change during last iteration : -3.10475e-08
+
+degrees of freedom    (FIT_NDF)                        : 97
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.725886
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.526911
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+No              = 1008.58          +/- 27.25        (2.702%)
+tau10           = 18.7249          +/- 0.6499       (3.471%)
+tau11           = 1499.33          +/- 152.6        (10.18%)
+
+
+correlation matrix of the fit parameters:
+
+               No     tau10  tau11  
+No              1.000 
+tau10           0.241  1.000 
+tau11           0.519  0.309  1.000 
+
+
+*******************************************************************************
+Thu Feb 19 00:20:17 2015
+
+
+FIT:    data read from 'isotope2_1000.dat' u 1:6:(1+(sqrt($6+1)))
+        format = x:z:s
+	y range restricted to [0.00000 : 1000.00]
+        #datapoints = 100
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 54.4371           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 0.0666462
+
+initial set of free parameter values
+
+No              = 1000
+tau10           = 19
+tau11           = 1221
+
+After 5 iterations the fit converged.
+final sum of squares of residuals : 51.1104
+rel. change during last iteration : -3.10475e-08
+
+degrees of freedom    (FIT_NDF)                        : 97
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.725886
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.526911
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+No              = 1008.58          +/- 27.25        (2.702%)
+tau10           = 18.7249          +/- 0.6499       (3.471%)
+tau11           = 1499.33          +/- 152.6        (10.18%)
+
+
+correlation matrix of the fit parameters:
+
+               No     tau10  tau11  
+No              1.000 
+tau10           0.241  1.000 
+tau11           0.519  0.309  1.000 
+
+
+*******************************************************************************
+Thu Feb 19 00:21:07 2015
+
+
+FIT:    data read from 'isotope2_1000.dat' u 1:6:(1+(sqrt($6+1)))
+        format = x:z:s
+        #datapoints = 1800
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 137.783           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 0.0157097
+
+initial set of free parameter values
+
+No              = 1000
+tau10           = 19
+tau11           = 1221
+
+After 3 iterations the fit converged.
+final sum of squares of residuals : 134.555
+rel. change during last iteration : -1.275e-06
+
+degrees of freedom    (FIT_NDF)                        : 1797
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.273637
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.0748774
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+No              = 952.081          +/- 8.622        (0.9056%)
+tau10           = 18.2044          +/- 0.2469       (1.356%)
+tau11           = 1215.97          +/- 33.15        (2.727%)
+
+
+correlation matrix of the fit parameters:
+
+               No     tau10  tau11  
+No              1.000 
+tau10           0.170  1.000 
+tau11           0.374  0.235  1.000 
+
+
+*******************************************************************************
+Thu Feb 19 00:21:32 2015
+
+
+FIT:    data read from 'isotope2_1000.dat' u 1:6:(1+(sqrt($6+1)))
+        format = x:z:s
+	y range restricted to [0.00000 : 100.000]
+        #datapoints = 10
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 8.8615            delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 0.195503
+
+initial set of free parameter values
+
+No              = 1000
+tau10           = 19
+tau11           = 1221
+
+After 10 iterations the fit converged.
+final sum of squares of residuals : 7.74831
+rel. change during last iteration : -5.50397e-07
+
+degrees of freedom    (FIT_NDF)                        : 7
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 1.05209
+variance of residuals (reduced chisquare) = WSSR/ndf   : 1.1069
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+No              = 935.3            +/- 83.59        (8.937%)
+tau10           = 17.0283          +/- 1.841        (10.81%)
+tau11           = 542.299          +/- 413.2        (76.2%)
+
+
+correlation matrix of the fit parameters:
+
+               No     tau10  tau11  
+No              1.000 
+tau10           0.821  1.000 
+tau11           0.914  0.864  1.000 
+
+
+*******************************************************************************
+Thu Feb 19 00:21:45 2015
+
+
+FIT:    data read from 'isotope2_1000.dat' u 1:6:(1+(sqrt($6+1)))
+        format = x:z:s
+	y range restricted to [0.00000 : 1000.00]
+        #datapoints = 100
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 54.4371           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 0.0666462
+
+initial set of free parameter values
+
+No              = 1000
+tau10           = 19
+tau11           = 1221
+
+After 5 iterations the fit converged.
+final sum of squares of residuals : 51.1104
+rel. change during last iteration : -3.10475e-08
+
+degrees of freedom    (FIT_NDF)                        : 97
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.725886
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.526911
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+No              = 1008.58          +/- 27.25        (2.702%)
+tau10           = 18.7249          +/- 0.6499       (3.471%)
+tau11           = 1499.33          +/- 152.6        (10.18%)
+
+
+correlation matrix of the fit parameters:
+
+               No     tau10  tau11  
+No              1.000 
+tau10           0.241  1.000 
+tau11           0.519  0.309  1.000 
+
+
+*******************************************************************************
+Thu Feb 19 00:22:08 2015
+
+
+FIT:    data read from 'isotope2_1000.dat' u 1:6:(1+(sqrt($6+1)))
+        format = x:z:s
+	y range restricted to [0.00000 : 300.000]
+        #datapoints = 30
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 23.0172           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 0.121672
+
+initial set of free parameter values
+
+No              = 1000
+tau10           = 19
+tau11           = 1221
+
+After 6 iterations the fit converged.
+final sum of squares of residuals : 20.4265
+rel. change during last iteration : 0
+
+degrees of freedom    (FIT_NDF)                        : 27
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.869791
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.756536
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+No              = 1014.51          +/- 33.59        (3.311%)
+tau10           = 18.9023          +/- 0.8276       (4.378%)
+tau11           = 1654.46          +/- 352.4        (21.3%)
+
+
+correlation matrix of the fit parameters:
+
+               No     tau10  tau11  
+No              1.000 
+tau10           0.294  1.000 
+tau11           0.481  0.439  1.000 
+
+
+*******************************************************************************
+Thu Feb 19 00:22:32 2015
+
+
+FIT:    data read from 'isotope2_1000.dat' u 1:6:(1+(sqrt($6+1)))
+        format = x:z:s
+	y range restricted to [0.00000 : 1000.00]
+        #datapoints = 100
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 54.4371           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 0.0666462
+
+initial set of free parameter values
+
+No              = 1000
+tau10           = 19
+tau11           = 1221
+
+After 5 iterations the fit converged.
+final sum of squares of residuals : 51.1104
+rel. change during last iteration : -3.10475e-08
+
+degrees of freedom    (FIT_NDF)                        : 97
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.725886
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.526911
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+No              = 1008.58          +/- 27.25        (2.702%)
+tau10           = 18.7249          +/- 0.6499       (3.471%)
+tau11           = 1499.33          +/- 152.6        (10.18%)
+
+
+correlation matrix of the fit parameters:
+
+               No     tau10  tau11  
+No              1.000 
+tau10           0.241  1.000 
+tau11           0.519  0.309  1.000 
+
+
+*******************************************************************************
+Thu Feb 19 00:26:27 2015
+
+
+FIT:    data read from 'isotope_bin20s.dat' u 1:6:(1+(sqrt($6+1)))
+        format = x:z:s
+	y range restricted to [0.00000 : 1000.00]
+        #datapoints = 100
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 54.4371           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 0.0666462
+
+initial set of free parameter values
+
+No              = 1000
+tau10           = 19
+tau11           = 1221
+
+After 5 iterations the fit converged.
+final sum of squares of residuals : 51.1104
+rel. change during last iteration : -3.10475e-08
+
+degrees of freedom    (FIT_NDF)                        : 97
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.725886
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.526911
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+No              = 1008.58          +/- 27.25        (2.702%)
+tau10           = 18.7249          +/- 0.6499       (3.471%)
+tau11           = 1499.33          +/- 152.6        (10.18%)
+
+
+correlation matrix of the fit parameters:
+
+               No     tau10  tau11  
+No              1.000 
+tau10           0.241  1.000 
+tau11           0.519  0.309  1.000 
+
+
+*******************************************************************************
+Thu Feb 19 00:28:30 2015
+
+
+FIT:    data read from 'isotope2_bin20s.dat' u 1:6:(1+(sqrt($6+1)))
+        format = x:z:s
+	y range restricted to [0.00000 : 1000.00]
+        #datapoints = 50
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 309.496           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 0.0463881
+
+initial set of free parameter values
+
+No              = 1000
+tau10           = 19
+tau11           = 1221
+
+After 5 iterations the fit converged.
+final sum of squares of residuals : 29.6033
+rel. change during last iteration : -1.37934e-08
+
+degrees of freedom    (FIT_NDF)                        : 47
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.793635
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.629856
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+No              = 2059.77          +/- 58.74        (2.852%)
+tau10           = 19.0978          +/- 0.7143       (3.74%)
+tau11           = 1409.39          +/- 137.2        (9.737%)
+
+
+correlation matrix of the fit parameters:
+
+               No     tau10  tau11  
+No              1.000 
+tau10           0.187  1.000 
+tau11           0.546  0.300  1.000 
+
+
+*******************************************************************************
+Thu Feb 19 00:28:48 2015
+
+
+FIT:    data read from 'isotope2_bin20s.dat' u 1:6:(1+(sqrt($6+1)))
+        format = x:z:s
+        #datapoints = 900
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 395.023           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 0.0109349
+
+initial set of free parameter values
+
+No              = 1000
+tau10           = 19
+tau11           = 1221
+
+After 4 iterations the fit converged.
+final sum of squares of residuals : 105.219
+rel. change during last iteration : -3.97866e-09
+
+degrees of freedom    (FIT_NDF)                        : 897
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.342492
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.117301
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+No              = 1931.75          +/- 20           (1.035%)
+tau10           = 18.5903          +/- 0.3142       (1.69%)
+tau11           = 1149.13          +/- 31.67        (2.756%)
+
+
+correlation matrix of the fit parameters:
+
+               No     tau10  tau11  
+No              1.000 
+tau10           0.089  1.000 
+tau11           0.326  0.212  1.000 
+
+
+*******************************************************************************
+Thu Feb 19 00:31:02 2015
+
+
+FIT:    data read from 'isotope2_bin5s.dat' u 1:6:(1+(sqrt($6+1)))
+        format = x:z:s
+        #datapoints = 3600
+function used for fitting: f(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 1337.03           delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-05
+ lambda	  : 0.0215502
+
+initial set of free parameter values
+
+No              = 1000
+tau10           = 19
+tau11           = 1221
+
+After 4 iterations the fit converged.
+final sum of squares of residuals : 168.511
+rel. change during last iteration : -2.36759e-06
+
+degrees of freedom    (FIT_NDF)                        : 3597
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.216443
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.0468477
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+No              = 470.63           +/- 3.715        (0.7893%)
+tau10           = 17.8017          +/- 0.2009       (1.128%)
+tau11           = 1301.26          +/- 35.9         (2.759%)
+
+
+correlation matrix of the fit parameters:
+
+               No     tau10  tau11  
+No              1.000 
+tau10           0.231  1.000 
+tau11           0.401  0.259  1.000 

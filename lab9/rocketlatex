@@ -1,0 +1,215 @@
+\setlength{\unitlength}{3947sp}%
+%
+\begingroup\makeatletter\ifx\SetFigFont\undefined%
+\gdef\SetFigFont#1#2#3#4#5{%
+  \reset@font\fontsize{#1}{#2pt}%
+  \fontfamily{#3}\fontseries{#4}\fontshape{#5}%
+  \selectfont}%
+\fi\endgroup%
+\begin{picture}(13216,8334)(-7,-9369)
+\thinlines
+{\color[rgb]{0,0,0}\put(6601,-9361){\oval(13200,3628)[tr]}
+\put(6601,-9361){\oval(13200,3628)[tl]}
+}%
+{\color[rgb]{0,0,0}\put(6601,-9211){\oval(13200,3600)[tr]}
+\put(6601,-9211){\oval(13200,3600)[tl]}
+}%
+{\color[rgb]{0,0,0}\put(6601,-9361){\oval(13200,3600)[tr]}
+\put(6601,-9361){\oval(13200,3600)[tl]}
+}%
+{\color[rgb]{0,0,0}\put(6751,-7636){\oval(2100,450)[tr]}
+\put(6751,-7636){\oval(2100,450)[tl]}
+}%
+{\color[rgb]{0,0,0}\put(7651,-2986){\circle*{336}}
+}%
+{\color[rgb]{0,0,0}\put(7651,-2986){\circle*{150}}
+}%
+{\color[rgb]{0,0,0}\put(7651,-2986){\circle*{150}}
+}%
+{\color[rgb]{0,0,0}\put(7763,-2948){\circle*{238}}
+}%
+{\color[rgb]{0,0,0}\put(9766,-1058){\line( 6,-1){947.838}}
+\put(10716,-1203){\line(-2,-5){356.552}}
+\put(10366,-2097){\line(-3, 5){617.206}}
+}%
+{\color[rgb]{0,0,0}\put(9751,-1047){\line( 3,-5){617.206}}
+\put(10351,-2086){\line(-5,-3){4115.441}}
+\put(6194,-4486){\line(-3, 5){617.206}}
+\put(5594,-3447){\line( 5, 3){4115.441}}
+\put(9751,-1047){\line( 0, 1){  0}}
+}%
+{\color[rgb]{1,0,0}\put(5626,-3436){\line(-3, 1){742.500}}
+\put(4876,-3211){\line( 6,-5){450}}
+\put(5326,-3586){\line(-6,-1){668.919}}
+\put(4651,-3661){\line( 5,-2){685.345}}
+\put(5326,-3961){\line(-6,-5){531.148}}
+\put(4801,-4411){\line( 6, 1){741.892}}
+\put(5551,-4336){\line( 0,-1){450}}
+\put(5551,-4786){\line( 4, 5){300}}
+\multiput(5851,-4411)(1.66667,-8.33333){46}{\makebox(1.6667,11.6667){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\put(5926,-4786){\line( 3, 4){225}}
+\put(6151,-4486){\line( 1, 0){ 75}}
+\put(6226,-4486){\line(-3, 5){622.059}}
+\put(5626,-3436){\line( 0, 1){  0}}
+}%
+{\color[rgb]{1,1,0}\multiput(6056,-4166)(-2.05882,-8.23530){26}{\makebox(1.6667,11.6667){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(6001,-4371)(-1.66621,8.33104){29}{\makebox(1.6667,11.6667){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(5953,-4138)(-5.40984,-6.49180){29}{\makebox(1.6667,11.6667){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(5797,-4316)(2.05647,8.22589){26}{\makebox(1.6667,11.6667){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\put(5851,-4111){\line(-1, 0){167}}
+\multiput(5684,-4121)(4.66923,7.00385){21}{\makebox(1.6667,11.6667){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(5776,-3980)(-6.47072,5.39227){29}{\makebox(1.6667,11.6667){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(5599,-3824)(8.50980,-2.12745){13}{\makebox(1.6667,11.6667){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(5701,-3850)(-4.43213,7.38688){27}{\makebox(1.6667,11.6667){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(5589,-3656)(8.18824,-2.04706){26}{\makebox(1.6667,11.6667){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\put(5793,-3710){\line( 3,-5){270.794}}
+}%
+\thicklines
+{\color[rgb]{0,0,0}\put(7651,-2986){\line( 0,-1){1875}}
+\put(7651,-4861){\line( 0, 1){1875}}
+}%
+\thinlines
+{\color[rgb]{0,0,0}\put(7501,-4786){\line( 1, 0){375}}
+\put(7876,-4786){\line(-3,-4){225}}
+\multiput(7651,-5086)(-3.75000,7.50000){41}{\makebox(1.6667,11.6667){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\put(7501,-4786){\line( 0, 1){  0}}
+}%
+\thicklines
+{\color[rgb]{0,0,0}\put(7651,-2986){\line(-2,-1){1140}}
+\put(6526,-3586){\line( 2, 1){1140}}
+}%
+{\color[rgb]{0,0,0}\put(7651,-2986){\line( 2, 1){1140}}
+\put(8776,-2386){\line(-2,-1){1140}}
+}%
+\thinlines
+{\color[rgb]{0,0,0}\multiput(8776,-2386)(3.75000,-7.50000){21}{\makebox(1.6667,11.6667){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(8851,-2536)(2.67857,8.03571){29}{\makebox(1.6667,11.6667){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\put(8926,-2311){\line(-3, 1){225}}
+\multiput(8701,-2236)(3.75000,-7.50000){21}{\makebox(1.6667,11.6667){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\put(8776,-2386){\line( 0, 1){  0}}
+}%
+{\color[rgb]{0,0,0}\multiput(6526,-3586)(-3.75000,7.50000){21}{\makebox(1.6667,11.6667){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(6451,-3436)(-2.67857,-8.03571){29}{\makebox(1.6667,11.6667){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\put(6376,-3661){\line( 3,-1){225}}
+\multiput(6601,-3736)(-3.75000,7.50000){21}{\makebox(1.6667,11.6667){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\put(6526,-3586){\line( 0, 1){  0}}
+}%
+{\color[rgb]{0,0,0}\put(7576,-2836){\line(-2, 3){692.308}}
+\put(6901,-1786){\line( 2,-3){692.308}}
+}%
+{\color[rgb]{0,0,0}\put(7651,-2911){\line( 0, 1){150}}
+\multiput(7651,-2761)(-7.50000,-3.75000){21}{\makebox(1.6667,11.6667){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(7501,-2836)(7.50000,-3.75000){21}{\makebox(1.6667,11.6667){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\put(7651,-2911){\line( 0, 1){  0}}
+}%
+{\color[rgb]{0,0,0}\put(6526,-7486){\framebox(450,150){}}
+}%
+{\color[rgb]{0,0,0}\put(6976,-7411){\line( 1, 0){1200}}
+\put(8176,-7411){\line(-1, 0){1200}}
+}%
+{\color[rgb]{0,0,0}\put(8176,-7411){\line( 0, 1){ 75}}
+\multiput(8176,-7336)(7.50000,-3.75000){21}{\makebox(1.6667,11.6667){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(8326,-7411)(-7.50000,-3.75000){21}{\makebox(1.6667,11.6667){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\put(8176,-7486){\line( 0, 1){ 75}}
+\put(8176,-7411){\line( 0, 1){  0}}
+}%
+{\color[rgb]{0,0,0}\put(6001,-7486){\line(-3, 1){225}}
+\multiput(5776,-7411)(7.50000,3.75000){21}{\makebox(1.6667,11.6667){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(5926,-7336)(3.75000,-7.50000){21}{\makebox(1.6667,11.6667){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\put(6001,-7486){\line( 0, 1){  0}}
+}%
+{\color[rgb]{0,0,0}\put(5926,-7411){\line(-1, 1){375}}
+\put(5551,-7036){\line( 1,-1){375}}
+}%
+{\color[rgb]{0,0,0}\put(7701,-2986){\line( 0, 1){  6}}
+\multiput(7701,-2980)(-inf,inf){1}{\makebox(1.6667,11.6667){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(7699,-2974)(-inf,inf){1}{\makebox(1.6667,11.6667){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(7697,-2969)(-inf,inf){1}{\makebox(1.6667,11.6667){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(7694,-2963)(-inf,inf){1}{\makebox(1.6667,11.6667){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(7690,-2957)(-inf,inf){1}{\makebox(1.6667,11.6667){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(7685,-2952)(-inf,inf){1}{\makebox(1.6667,11.6667){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(7680,-2947)(-inf,inf){1}{\makebox(1.6667,11.6667){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(7674,-2943)(-inf,inf){1}{\makebox(1.6667,11.6667){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(7668,-2940)(-inf,inf){1}{\makebox(1.6667,11.6667){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(7663,-2938)(-inf,inf){1}{\makebox(1.6667,11.6667){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\put(7657,-2936){\line(-1, 0){  6}}
+\put(7651,-2936){\line(-1, 0){  6}}
+\multiput(7645,-2936)(-inf,-inf){1}{\makebox(1.6667,11.6667){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(7639,-2938)(-inf,-inf){1}{\makebox(1.6667,11.6667){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(7634,-2940)(-inf,-inf){1}{\makebox(1.6667,11.6667){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(7628,-2943)(-inf,-inf){1}{\makebox(1.6667,11.6667){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(7622,-2947)(-inf,-inf){1}{\makebox(1.6667,11.6667){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(7617,-2952)(-inf,-inf){1}{\makebox(1.6667,11.6667){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(7612,-2957)(-inf,-inf){1}{\makebox(1.6667,11.6667){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(7608,-2963)(-inf,-inf){1}{\makebox(1.6667,11.6667){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(7605,-2969)(-inf,-inf){1}{\makebox(1.6667,11.6667){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(7603,-2974)(-inf,-inf){1}{\makebox(1.6667,11.6667){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\put(7601,-2980){\line( 0,-1){  6}}
+\multiput(7601,-2986)(1.48650,-8.91900){2}{\makebox(1.6667,11.6667){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(7602,-2995)(3.00000,-9.00000){2}{\makebox(1.6667,11.6667){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(7605,-3004)(3.65520,-9.13800){2}{\makebox(1.6667,11.6667){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(7609,-3013)(6.00000,-9.00000){2}{\makebox(1.6667,11.6667){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(7615,-3022)(6.80330,-8.16396){2}{\makebox(1.6667,11.6667){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(7622,-3030)(6.00000,-8.00000){2}{\makebox(1.6667,11.6667){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(7628,-3038)(6.00000,-6.00000){2}{\makebox(1.6667,11.6667){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(7634,-3044)(inf,-inf){1}{\makebox(1.6667,11.6667){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(7639,-3049)(inf,-inf){1}{\makebox(1.6667,11.6667){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(7641,-3051)(inf,-inf){1}{\makebox(1.6667,11.6667){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(7642,-3052)(inf,-inf){1}{\makebox(1.6667,11.6667){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(7644,-3054)(inf,-inf){1}{\makebox(1.6667,11.6667){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(7646,-3055)(inf,-inf){1}{\makebox(1.6667,11.6667){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(7647,-3056)(inf,-inf){1}{\makebox(1.6667,11.6667){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\put(7648,-3057){\line( 1, 0){  2}}
+\multiput(7650,-3057)(inf,-inf){1}{\makebox(1.6667,11.6667){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(7651,-3058)(inf,inf){1}{\makebox(1.6667,11.6667){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\put(7652,-3057){\line( 1, 0){  2}}
+\multiput(7654,-3057)(inf,inf){1}{\makebox(1.6667,11.6667){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(7655,-3056)(inf,inf){1}{\makebox(1.6667,11.6667){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(7656,-3055)(inf,inf){1}{\makebox(1.6667,11.6667){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(7658,-3054)(inf,inf){1}{\makebox(1.6667,11.6667){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(7660,-3052)(inf,inf){1}{\makebox(1.6667,11.6667){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(7661,-3051)(inf,inf){1}{\makebox(1.6667,11.6667){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(7664,-3049)(inf,inf){1}{\makebox(1.6667,11.6667){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(7668,-3044)(6.00000,6.00000){2}{\makebox(1.6667,11.6667){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(7674,-3038)(6.00000,8.00000){2}{\makebox(1.6667,11.6667){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(7680,-3030)(6.80330,8.16396){2}{\makebox(1.6667,11.6667){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(7687,-3022)(6.00000,9.00000){2}{\makebox(1.6667,11.6667){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(7693,-3013)(3.65520,9.13800){2}{\makebox(1.6667,11.6667){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(7697,-3004)(3.00000,9.00000){2}{\makebox(1.6667,11.6667){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+\multiput(7700,-2995)(1.48650,8.91900){2}{\makebox(1.6667,11.6667){\tiny{\rmdefault}{\mddefault}{\updefault}.}}
+}%
+\put(6376,-1636){\makebox(0,0)[lb]{\smash{{\SetFigFont{12}{14.4}{\rmdefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}    Mass}%
+}}}}
+\put(6376,-1411){\makebox(0,0)[lb]{\smash{{\SetFigFont{12}{14.4}{\rmdefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}Center of}%
+}}}}
+\put(6676,-3736){\makebox(0,0)[lb]{\smash{{\SetFigFont{12}{14.4}{\rmdefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}F}%
+}}}}
+\put(6751,-3811){\makebox(0,0)[lb]{\smash{{\SetFigFont{8}{9.6}{\rmdefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}d}%
+}}}}
+\put(7801,-5086){\makebox(0,0)[lb]{\smash{{\SetFigFont{12}{14.4}{\rmdefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}F}%
+}}}}
+\put(7876,-5161){\makebox(0,0)[lb]{\smash{{\SetFigFont{8}{9.6}{\rmdefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}g}%
+}}}}
+\put(9001,-2386){\makebox(0,0)[lb]{\smash{{\SetFigFont{12}{14.4}{\rmdefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}F}%
+}}}}
+\put(9076,-2461){\makebox(0,0)[lb]{\smash{{\SetFigFont{8}{9.6}{\rmdefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}p}%
+}}}}
+\put(6526,-7186){\makebox(0,0)[lb]{\smash{{\SetFigFont{8}{9.6}{\rmdefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}Rocket}%
+}}}}
+\put(5401,-7786){\makebox(0,0)[lb]{\smash{{\SetFigFont{12}{14.4}{\rmdefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}Launch }%
+}}}}
+\put(5476,-8011){\makebox(0,0)[lb]{\smash{{\SetFigFont{12}{14.4}{\rmdefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}Point}%
+}}}}
+\put(6376,-8836){\makebox(0,0)[lb]{\smash{{\SetFigFont{20}{24.0}{\rmdefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}Earth}%
+}}}}
+\put(3226,-7636){\makebox(0,0)[lb]{\smash{{\SetFigFont{12}{14.4}{\rmdefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}Atmosphere}%
+}}}}
+\put(7501,-7786){\makebox(0,0)[lb]{\smash{{\SetFigFont{12}{14.4}{\rmdefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}Impact}%
+}}}}
+\put(7576,-8011){\makebox(0,0)[lb]{\smash{{\SetFigFont{12}{14.4}{\rmdefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}Point}%
+}}}}
+\put(5101,-6961){\makebox(0,0)[lb]{\smash{{\SetFigFont{12}{14.4}{\rmdefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}trajectory}%
+}}}}
+\put(5176,-6811){\makebox(0,0)[lb]{\smash{{\SetFigFont{12}{14.4}{\rmdefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}Rocket}%
+}}}}
+\end{picture}%

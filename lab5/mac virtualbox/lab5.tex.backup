@@ -1,0 +1,219 @@
+\documentclass[11pt]{article}
+
+% the percent sign gives comments in Latex
+% top line indicates this is for Physical Review, standard journal format,
+% suitable for electronic submission of articles
+
+% the line above is necessary to start any latex document.
+% this is one variation that should work for most things.
+% if you want double spaceing, use the following:
+%
+%\documentclass[prd,preprint,letterpaper]{revtex4}
+%
+% the "preprint" designation will make a wider line
+% spacing, good for markup.
+\usepackage{graphicx}  % this is the up-to-date package for all figures
+\usepackage{float}	% allows use of 'H' command
+
+% these are some custom control of the page size and margins
+% \topmargin= 0.2in  % these 1st two may be needed for some computers
+%\textheight=8.75in
+\textwidth=6.5in
+\oddsidemargin=0cm
+\evensidemargin=0cm
+
+% this is where the actual document itself (rather than control statements) begins:
+
+\begin{document}
+
+% use a style that gives automatic headings
+\pagestyle{myheadings}
+
+% the \title{} command generates a title.
+
+% the \\ below is used to FORCE a line break in the middle of the sentence--
+% otherwise latex computes it for you
+
+\title{Lab 5:\\
+Monte-Carlo Integration}
+
+
+\author{Corey Mutnik \\
+{\it Computational Physics 305, University of Hawaii at Manoa} }
+
+
+\date{February 17, 2015}
+
+
+
+
+\maketitle    % this line is necessary to tell latex you are done with all
+	      % of the stuff associated with the title, and now it can go
+              % ahead and generate the title portion
+
+
+	      % \section is used to start a new one with a heading
+\abstract{
+
+The Monte-Carlo method of integration allows us to calculate amount of space something occupies knowing nothing 
+more than its boundaries.  In the simple case of estimating the area of a cicle/sphere inscribed in a square/cube 
+we used a hit ratio to estimate the amount of space each object occupied (area/volume).  This simple notion can 
+than be applied to objects with higher dimensionality.  By knowing the equations governing an objects boundaries 
+and calculating its hit ratio we are able to estimate the "volume" of such an object, independent of what dimension 
+it resides in.
+
+}
+
+\section{Introduction}
+
+For this weeks lab we used the method of Monte-Carlo integration.  This method allows us to calculate the volume 
+of an object bounded within a given region, of known volume:
+\begin{equation}
+\label{1}
+V_{unknown}=\frac{N_{hit}}{N_{tot}}V_{tot}
+\end{equation}
+Using equation 1 allows for the approximation of a given volume by exploiting statistical probability.  Figure 1 
+is a graphical representation of using the Monte-Carlo method of integration to estimate the volume of a sphere 
+inscribed in our defined cube.  The hit ratio is calculated by dividing the number of trials that landed within 
+our selected boundary (the unit sphere) by the total number of trials.  Since each trial is generted using a 
+random number between -1 and 1 it has equal probability of hitting anywhere with our cube.  By multiplying the 
+hit ratio by the total volume of the cube, a value for the unknown volume of the unit sphere is obtained.  As 
+shown in figure 2 below the fractional area, when using this method, is minimized for a specific number of trials.  
+This tells us that there is an ideal number of trials we should use to get the most accurate estimate possible.
+
+
+% one or more lines of space between paragraphs determines them
+\section{Code}
+
+The code for this weeks can be seen online: \\
+http://www2.hawaii.edu/$\sim$cmutnik/lab5.html
+
+
+\section{Computational problem}
+
+Although we may not be able to envision an object residing in more that 3 spatial dimensions we can use the 
+Monte-Carlo method of integration to calculate its "volume".  First we must determine the equation governing 
+its boundaries:
+
+\begin{equation}
+\label{F}
+V_{n}(R)=\frac{\pi^{\frac{n}{2}}}{\Gamma (\frac{n}{2}+1)}R^{n}
+\end{equation}
+This equation is used to calculate the true volume of an N-dimensional sphere [4].  In order to estimate such a 
+volume we multiplied its hit ratio by the total area enclosing it.
+
+\section{Graphs}
+
+\begin{figure}[H]
+  \begin{center}
+\centerline{\includegraphics[width=3.75in]{3dvol.png}}
+\caption{\it \small{Graphical representation of a Monte Carlo Integration for a 3D sphere \label{fig1}}}
+  \end{center}
+\end{figure}
+
+\begin{figure}[H]
+  \begin{center}
+\centerline{\includegraphics[width=3.75in]{fracerrvsn.png}}
+\caption{\it \small{Fractional error VS N \label{fig2}}}
+  \end{center}
+\end{figure}
+
+\begin{figure}[H]
+  \begin{center}
+\centerline{\includegraphics[width=3.75in]{fracerr2d3d.png}}
+\caption{\it \small{Fractional error VS N for a 2D and 3D sphere \label{fig3}}}
+  \end{center}
+\end{figure}
+
+\begin{figure}[H]
+  \begin{center}
+\centerline{\includegraphics[width=3.75in]{fracerr2d3dlogy.png}}
+\caption{\it \small{Number of trials (N) VS log of fractional error for a 2D and 3D sphere \label{fig4}}}
+  \end{center}
+\end{figure}
+
+\begin{figure}[H]
+  \begin{center}
+\centerline{\includegraphics[width=3.75in]{vsphere.png}}
+\caption{\it \small{Theoretical volume of a sphere as a function of dimensions for 300 and 30,000 trials \label{fig5}}}
+  \end{center}
+\end{figure}
+
+\begin{figure}[H]
+  \begin{center}
+\centerline{\includegraphics[width=3.75in]{vtrue300.png}}
+\caption{\it \small{Actual volume of sphere as a function of number of dimensions for 300 trials \label{fig6}}}
+  \end{center}
+\end{figure}
+
+\begin{figure}[H]
+  \begin{center}
+\centerline{\includegraphics[width=3.75in]{vtrue30000.png}}
+\caption{\it \small{Actual volume of sphere as a function of number of dimensions for 30,000 trials \label{fig7}}}
+  \end{center}
+\end{figure}
+
+\begin{table}[H]
+  \begin{center}
+\begin{tabular}{llll}
+Dimensions & Vsphere & Vtrue   & Analytical Value \\
+2          & 3.1416  & 3.14159 & 3.14159           \\
+3          & 4.22507 & 4.18879 & 4.18879           \\
+4          & 4.97973 & 4.9348  & 4.93480           \\
+5          & 5.26613 & 5.26379 & 5.26379           \\
+6          & 5.0304  & 5.16771 & 5.167713          \\
+7          & 4.5184  & 4.72477 & 4.72477                 
+\end{tabular}
+\end{center}
+\end{table}
+
+This table was generated using 3,000 trials. Where Vsphere was calculated using the hit ratio, Vtrue was calculated using 
+equation 2, and the analytical values were supplied[3].
+
+
+\section{Analysis}
+
+Figure 5 shows the volume as a funtion of dimensions for an n-dimensional sphere, using both 300 and 30,000 trials.  
+30,000 was selected since one expects the hit ratio to converge as the number of trials increases.  300 was selected 
+since it was where the local minimum occured in the fractional error graph (figure 3).
+
+
+In comparing our calculated values to the analytical values[3] two trends become apparent.  The value of Vtrue is 
+consistent with the analytic values, since equation 2 is a slight modification of the one used in generating them.  
+As the number of dimensions increases one would expect the volume to increase as well.  This is only the case up to 
+five dimensions.  The volume decreases after five dimensions.  Since we can not take measurements in higher than 
+three spatial dimensions we assume the volume of the hypersphere will increase as the volume of the hypercube does.  
+Such an assumption is predicated on the trend observed to occur when the transition between one and three 
+dimensions takes place.  This assumption is either false or our equation governing such objects breaks down; its 
+level of accuracy declines as more dimensions are added.
+
+
+\section{Conclusion}
+
+The Monte-Carlo method of integration is very useful in calculating the "volume" of an object when its boundaries 
+are well defined.  Although this method begins to break down for larger numbers of dimensions it is very useful in our 
+physical world.
+
+
+
+% the following \setlength is to force the bibliography to have no
+% paragraph indentations.Can use vairous units--cm are used here.
+\setlength{\parindent}{0cm}
+
+\begin{thebibliography}{99}  % the trailing 99 controls some obscure format--just use
+
+\bibitem{Landau} R. H. Landau and M. J. Paez, "Computational Physics, Problem Solving with Computers,"
+(Wiley: New York) 1997.
+\\
+\bibitem{Gorham} P. Gorham, (2014).
+\\
+\bibitem{Dimensions} Enevoldsen, Keith. "N-Dimensions."  Think Zone, n.d. Web. 12 Feb. 2015.
+\\
+\bibitem{nDeq} Su, Francis. "Volume of a Ball in N Dimensions." {\em Mudd Math Fun Facts.} Harvey Mudd College Math Department, 1990. Web. 12 Feb. 2015.      % {\em } for emphasis,
+
+
+
+\end{thebibliography}
+
+\end{document}
+

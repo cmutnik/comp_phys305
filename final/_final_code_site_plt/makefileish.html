@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>lab4</title>
+  </head>
+  <body>
+    #save contents below to file titled 'makefile'<br>
+    <br>
+    <br>
+    # makefile for c++ programs<br>
+    #<br>
+    # to create binary executable "area" below, type "make area"<br>
+    #<br>
+    # If you don't have a "bin" folder for binaries, create it first<br>
+    #<br>
+    # the "#" is the comment character for makefile scripts<br>
+    #<br>
+    # this section sets some variables/alaises<br>
+    # The syntax "$(HOME)" gives substitution of the variable HOME<br>
+    # change "your_username" below to appropriate name<br>
+    #<br>
+    HOME = /home/cmutnik<br>
+    BINDIR&nbsp; =&nbsp; $(HOME)/bin<br>
+    LOCALDIR = $(HOME)/work<br>
+    #<br>
+    # this section for compiler flags and link libraries<br>
+    # -O3 gives a high degree of code optimization, -W gives all
+    warnings<br>
+    # and -g turns on the debug options<br>
+    #<br>
+    GFLAGS&nbsp; = -O3 -W -g <br>
+    LIBS&nbsp;&nbsp;&nbsp; = -lm<br>
+    CC&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = g++<br>
+    <br>
+    ########<br>
+    all: harmonic1 squarewell harm1mod hydrogen wavefunc<br>
+    ########<br>
+    harmonic1:<br>
+    &nbsp;&nbsp;&nbsp; $(CC) $(GFLAGS) harmonic1.c -o
+    $(BINDIR)/harmonic1 $(LIBS)<br>
+    3Vector.o:<br>
+    &nbsp;&nbsp;&nbsp; $(CC) -c 3Vector.cpp<br>
+    harm1mod3vec: 3Vector.o<br>
+    &nbsp;&nbsp;&nbsp; $(CC) harm1mod3vec.cpp 3Vector.o -o
+    $(BINDIR)/harm1mod3vec $(LIBS)<br>
+    squarewell:<br>
+    &nbsp;&nbsp;&nbsp; $(CC) $(GFLAGS) squarewell.cpp -o
+    $(BINDIR)/squarewell $(LIBS)<br>
+    harm1mod:<br>
+    &nbsp;&nbsp;&nbsp; $(CC) $(GFLAGS) harm1mod.cpp -o
+    $(BINDIR)/harm1mod $(LIBS)<br>
+    harm1modxz:<br>
+    &nbsp;&nbsp;&nbsp; $(CC) $(GFLAGS) harm1modxz.cpp -o
+    $(BINDIR)/harm1modxz $(LIBS)<br>
+    harm1modxzbeta:<br>
+    &nbsp;&nbsp;&nbsp; $(CC) $(GFLAGS) harm1modxzbeta.cpp -o
+    $(BINDIR)/harm1modxzbeta $(LIBS)<br>
+    FRK4xv.o:<br>
+    &nbsp;&nbsp;&nbsp; $(CC) -c FRK4xv.cpp<br>
+    wavefunc: FRK4xv.o<br>
+    &nbsp;&nbsp;&nbsp; $(CC) $(GFLAGS) wavefunc.cpp FRK4xv.o -o
+    $(BINDIR)/wavefunc $(LIBS)<br>
+    wavefunc2: FRK4xv.o<br>
+    &nbsp;&nbsp;&nbsp; $(CC) $(GFLAGS) wavefunc2.cpp FRK4xv.o -o
+    $(BINDIR)/wavefunc2 $(LIBS)<br>
+    hydrogen:<br>
+    &nbsp;&nbsp;&nbsp; $(CC) $(GFLAGS) hydrogen.cpp -o
+    $(BINDIR)/hydrogen $(LIBS)<br>
+    periodicwell:<br>
+    &nbsp;&nbsp;&nbsp; $(CC) $(GFLAGS) periodicwell.cpp -o
+    $(BINDIR)/periodicwell $(LIBS)<br>
+    schroedinger:<br>
+    &nbsp;&nbsp;&nbsp; $(CC) $(GFLAGS) schroedinger.cpp -o
+    $(BINDIR)/schroedinger $(LIBS)<br>
+    harm1modyx:<br>
+    &nbsp;&nbsp;&nbsp; $(CC) $(GFLAGS) harm1modyx.cpp -o
+    $(BINDIR)/harm1modyx $(LIBS)<br>
+    clean:<br>
+    &nbsp;&nbsp;&nbsp; rm *.dat<br>
+    <br>
+    <br>
+    # Whenever you add a new program to your collection of work,<br>
+    # you add new lines in the file to govern the compiling of your new
+    program.<br>
+    # end of makefile<br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div align="center"><a
+        href="http://www2.hawaii.edu/%7Ecmutnik/index.html">Home</a> | <a
+        href="http://www2.hawaii.edu/%7Ecmutnik/pi.html">Lab1</a> | <a
+        href="http://www2.hawaii.edu/%7Ecmutnik/lab2.html">Lab2</a> | <a
+        href="http://www2.hawaii.edu/%7Ecmutnik/lab3.html">Lab3</a> | <a
+        href="http://www2.hawaii.edu/%7Ecmutnik/lab4.html">Lab4</a> | <a
+        href="http://www2.hawaii.edu/%7Ecmutnik/lab5.html">Lab5</a> | <a
+        href="http://www2.hawaii.edu/%7Ecmutnik/lab6.html">Lab6</a> | <a
+        href="http://www2.hawaii.edu/%7Ecmutnik/lab7.html">Lab7</a> | <a
+        href="http://www2.hawaii.edu/%7Ecmutnik/lab8.html">Lab8</a> | <a
+        href="http://www2.hawaii.edu/%7Ecmutnik/lab9.html">Lab9</a> | <a
+        href="http://www2.hawaii.edu/%7Ecmutnik/lab10.html">Lab10</a> |
+      <a href="http://www2.hawaii.edu/%7Ecmutnik/lab11.html">Lab11</a> |
+      <a href="final.html">Final</a><br>
+    </div>
+  </body>
+</html>

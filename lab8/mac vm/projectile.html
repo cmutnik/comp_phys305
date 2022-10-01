@@ -1,0 +1,196 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>projectile</title>
+  </head>
+  <body>
+    // projectile motion <br>
+    // Corey Muntik 3/2015<br>
+    // Modified from P. Gorham, updated 3/2013 for UH Physics 305 <br>
+    <br>
+    <br>
+    <br>
+    using namespace std;<br>
+    #include &lt;iostream&gt;<br>
+    #include &lt;iomanip&gt;<br>
+    #include &lt;fstream&gt;<br>
+    #define USE_MATH_DEFINES<br>
+    #include &lt;cmath&gt;<br>
+    #include &lt;cstdlib&gt; <br>
+    <br>
+    #define Tmax&nbsp;
+    500&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    // seconds<br>
+    #define PI M_PI<br>
+    #include "3Vector.h" <br>
+    <br>
+    // this structure type for 3-vectors <br>
+    /*typedef struct {<br>
+    &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; double x, y, z;<br>
+    &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; } vec3;<br>
+    */&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <br>
+    // we use a global time variable so the functions can use time<br>
+    //&nbsp;&nbsp; dependent accelerations if necessary<br>
+    double t,t0, theta0;<br>
+    <br>
+    extern vec3 vecFRK4xv(int, vec3 (*)(double, vec3, vec3),<br>
+    &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; vec3
+    (*)(double, vec3, vec3),<br>
+    &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;
+    double ,vec3, vec3,double ), vec3sum(vec3, vec3);<br>
+    <br>
+    <br>
+    // this function should return the drag coeffcient as a function of
+    altitude H<br>
+    // accounting for the density of air using an exponential scale
+    height<br>
+    double dragc(double H)<br>
+    {<br>
+    &nbsp;&nbsp;&nbsp; double Cd, A, Po, ho, r;<br>
+    &nbsp;&nbsp;&nbsp; r = 0.0738/2.0;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp; // radius of ball in m<br>
+    &nbsp;&nbsp;&nbsp; A = pow(r,2.0)*PI;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp; // cross sectional area in m^2<br>
+    &nbsp;&nbsp;&nbsp; Po = 1.22;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+    // sealevel air density in kg/m^3<br>
+    &nbsp;&nbsp;&nbsp; Cd = 0.3;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; //
+    drag coeff<br>
+    &nbsp;&nbsp;&nbsp; ho = 7000.0;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+    // scale height of atm<br>
+    &nbsp;&nbsp;&nbsp; double altitude = 1600.0;&nbsp;&nbsp;&nbsp; //
+    altitude of city above sea-level, in meters<br>
+    <br>
+    // for zero drag case<br>
+    //&nbsp;&nbsp;&nbsp; double Cdrho = 0.0;<br>
+    <br>
+    &nbsp;&nbsp;&nbsp; double Cdrho = (1.0/2.0)*Cd*A*Po*exp(-(H +
+    altitude)/ho);<br>
+    &nbsp;&nbsp;&nbsp; return(Cdrho);<br>
+    }<br>
+    <br>
+    // this function is complete: gives the formal definition dx/dt=v<br>
+    vec3 f_x(double t, vec3 x, vec3 v)<br>
+    {<br>
+    &nbsp;&nbsp;&nbsp; return(v);<br>
+    }<br>
+    <br>
+    <br>
+    // this function should return the force/mass=acceleration as a <br>
+    // function of the position and velocity vectors, based on the force
+    law<br>
+    vec3 f_v(double t, vec3 x, vec3 v)<br>
+    {<br>
+    &nbsp;&nbsp;&nbsp; double&nbsp; g=9.8, m=0.145;<br>
+    &nbsp;&nbsp;&nbsp; vec3 retval;<br>
+    &nbsp;&nbsp;&nbsp; vec3 W;<br>
+    &nbsp;&nbsp;&nbsp; vec3 vapp;<br>
+    &nbsp;&nbsp;&nbsp; vec3 a;<br>
+    &nbsp;&nbsp;&nbsp; <br>
+    &nbsp;&nbsp;&nbsp; a.x = 0.0;<br>
+    &nbsp;&nbsp;&nbsp; a.y = 0.0;<br>
+    &nbsp;&nbsp;&nbsp; a.z = 0.0;<br>
+    &nbsp;&nbsp;&nbsp; <br>
+    // 15mph = 6.7056m/s<br>
+    &nbsp;&nbsp;&nbsp; W.x = 6.7056; // same direction is negative<br>
+    &nbsp;&nbsp;&nbsp; W.y = 0.0;<br>
+    &nbsp;&nbsp;&nbsp; W.z = 0.0;<br>
+    &nbsp;&nbsp;&nbsp; <br>
+    &nbsp;&nbsp;&nbsp; vapp = vec3diff(v, W);<br>
+    &nbsp;&nbsp;&nbsp; double bvmag = dragc(x.z)*vec3mag(vapp);<br>
+    &nbsp;&nbsp;&nbsp; a = scalar_vec3mult(bvmag/m, vapp);<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; retval.x = 0.0; // x is
+    forward<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; retval.y = 0.0; // y is
+    side-to-side<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; retval.z = -g;&nbsp; // z
+    is vertical, gravity only here<br>
+    retval=vec3diff(retval,a);<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return(retval);<br>
+    <br>
+    }<br>
+    <br>
+    <br>
+    <br>
+    <br>
+    main(int argc,char *argv[])<br>
+    {<br>
+    &nbsp; vec3 xt,vt,xtold,vtold;<br>
+    &nbsp; double dt;<br>
+    &nbsp; double vt0,v0;<br>
+    &nbsp;&nbsp; ofstream outfile;&nbsp; <br>
+    &nbsp;&nbsp; <br>
+    &nbsp;&nbsp;&nbsp; if(argc&lt;3){<br>
+    &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; cerr &lt;&lt; "usage:
+    projectile [theta0 (deg)][v0 (m/s)]" &lt;&lt; endl;<br>
+    &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; exit(0);<br>
+    &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; }<br>
+    &nbsp;<br>
+    &nbsp;&nbsp; <br>
+    &nbsp;&nbsp;&nbsp; outfile.open("dragdeg45denver.dat");<br>
+    &nbsp;&nbsp;&nbsp; <br>
+    &nbsp;&nbsp;&nbsp; theta0 = PI/180.0*atof(argv[1]);&nbsp;&nbsp; //
+    initial angle, radians<br>
+    &nbsp;&nbsp;&nbsp; v0 =
+    atof(argv[2]);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    // initial velocity, m/s<br>
+    &nbsp;&nbsp;&nbsp; vtold.x =
+    v0*cos(theta0);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    // x and z components of velocity<br>
+    &nbsp;&nbsp;&nbsp; vtold.z = v0*sin(theta0);<br>
+    &nbsp;&nbsp;&nbsp; vtold.y =
+    0.0;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    //&nbsp; in plane motion only here<br>
+    &nbsp;&nbsp;&nbsp; t0 =
+    0.0;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    // initial time<br>
+    &nbsp;&nbsp;&nbsp; xtold.x =
+    0.0;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    // initial position at origin<br>
+    &nbsp;&nbsp;&nbsp; xtold.y = 0.0;<br>
+    &nbsp;&nbsp;&nbsp; xtold.z = 0.0;<br>
+    &nbsp;&nbsp;&nbsp; dt =
+    0.01;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    // time step<br>
+    <br>
+    <br>
+    &nbsp;&nbsp;&nbsp; // print out starting values <br>
+    <br>
+    &nbsp;&nbsp;&nbsp; &nbsp;outfile &lt;&lt; t0 &lt;&lt; " " &lt;&lt;
+    xtold.x &lt;&lt; " " &lt;&lt; xtold.x &lt;&lt; " " <br>
+    &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+    &lt;&lt; vtold.x &lt;&lt; " " &lt;&lt; vtold.z &lt;&lt; endl;<br>
+    <br>
+    &nbsp;&nbsp;&nbsp; for(t=t0; t&lt;Tmax; t+= dt){<br>
+    <br>
+    &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; xt = vec3sum( xtold ,
+    vecFRK4xv(0,f_x,f_v,t,xtold,vtold,dt) );<br>
+    &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; vt = vec3sum( vtold ,
+    vecFRK4xv(1,f_x,f_v,t,xtold,vtold,dt) );<br>
+    <br>
+    &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; xtold = xt;<br>
+    &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; vtold = vt;<br>
+    <br>
+    &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; if(xt.z&lt;0.0){<br>
+    &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;outfile &lt;&lt; t &lt;&lt; " " &lt;&lt; xtold.x &lt;&lt; " "
+    &lt;&lt; xtold.z &lt;&lt; " " <br>
+    &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp; &lt;&lt; vtold.x &lt;&lt; " " &lt;&lt; vtold.z
+    &lt;&lt; endl; <br>
+    &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+    &nbsp;break;<br>
+    &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;}<br>
+    &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; outfile &lt;&lt; t
+    &lt;&lt; " " &lt;&lt; xtold.x &lt;&lt; " " &lt;&lt; xtold.z &lt;&lt;
+    " " <br>
+    &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp; &lt;&lt; vtold.x &lt;&lt; " " &lt;&lt; vtold.z
+    &lt;&lt; endl;<br>
+    &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; }<br>
+    <br>
+    cout &lt;&lt; argv[1] &lt;&lt; "\t" &lt;&lt; xtold.x &lt;&lt; endl;<br>
+    }<br>
+  </body>
+</html>

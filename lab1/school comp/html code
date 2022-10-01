@@ -1,0 +1,8 @@
+<script type="text/javascript"
+  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+// need to insert this code in the head of an html document in order for it to work
+
+g++ value_of_pi.cpp -o ~/bin/value_of_pi	//compiles code in terminal window

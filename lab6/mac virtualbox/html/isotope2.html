@@ -1,0 +1,162 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>isotope2.html</title>
+  </head>
+  <body>
+    /* Isotope2.cpp: program to simulate radioactive decay<br>
+    &nbsp;* -Corey Mutnik 2/15 <br>
+    &nbsp;* REF: P. Gorham for UH Physics 305 2/24/14 <br>
+    &nbsp;*/<br>
+    <br>
+    using namespace std;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // sets up
+    some standard names for things<br>
+    #include &lt;iostream&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    // This is&nbsp; library containing input-output functions<br>
+    #include &lt;iomanip&gt;&nbsp;&nbsp; // this is required to use
+    "setprecision" <br>
+    #include &lt;fstream&gt;<br>
+    #define _USE_MATH_DEFINES&nbsp; // tells the compiler to define math
+    constants (like pi) for you<br>
+    #include &lt;cmath&gt;<br>
+    #include &lt;cstdio&gt;&nbsp;&nbsp;&nbsp;&nbsp; // for the&nbsp;
+    useful old C-standard stuff <br>
+    #include &lt;cstdlib&gt;&nbsp;&nbsp; &nbsp;<br>
+    <br>
+    #define LONGENOUGH&nbsp; 18000 // fill this in with an integer time
+    in secs that is long enough<br>
+    &nbsp;&nbsp; &nbsp;<br>
+    main(int argc, char *argv[])<br>
+    {<br>
+    &nbsp;<br>
+    &nbsp;&nbsp; &nbsp;if(argc&lt;6){<br>
+    &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;cerr&lt;&lt; "usage: Isotope2
+[Natoms-C10][Natoms-C11][Natoms-C12][Half-life-C10][Half-life-C11]"&lt;&lt;endl;<br>
+    &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;exit(0);<br>
+    &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;}<br>
+    &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br>
+    &nbsp;&nbsp; &nbsp;int Natoms1[3];<br>
+    &nbsp;&nbsp; &nbsp;for(int i=0; i&lt;=2; i++){ <br>
+    &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; Natoms1[i] = atoi(argv[i+1]);<br>
+    &nbsp;&nbsp; &nbsp;}<br>
+    &nbsp;&nbsp; &nbsp;<br>
+    &nbsp;&nbsp; &nbsp;double Lifetime1[2];<br>
+    &nbsp;&nbsp; &nbsp;for(int i=0; i&lt;2; i++){<br>
+    &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Lifetime1[i] =
+    atof(argv[i+4])/log(2);<br>
+    &nbsp;&nbsp; &nbsp;}<br>
+    &nbsp;&nbsp; &nbsp; <br>
+    &nbsp;/* do loop instead ^<br>
+    &nbsp;&nbsp;&nbsp; int Natoms1 = atoi(argv[1]); // number of inital
+    C12 atoms<br>
+    &nbsp;&nbsp;&nbsp; int Natoms11 = atoi(argv[2]); // number of inital
+    C11 atoms<br>
+    &nbsp;&nbsp;&nbsp; int Natoms10 = atoi(argv[4]); // number of inital
+    C10 atoms<br>
+    &nbsp;&nbsp;&nbsp; double Lifetime11 = atof(argv[3])/log(2); //
+    defined halflife of C11<br>
+    &nbsp;&nbsp;&nbsp; double Lifetime10 = atof(argv[5])/log(2); //
+    defined halflife of C10<br>
+    */<br>
+    &nbsp;<br>
+    &nbsp;&nbsp;&nbsp; double *DecayArr[2], *RemainArr[2], *decaytot,
+    *remaintot;&nbsp; &nbsp;<br>
+    &nbsp;&nbsp;&nbsp; double dt = 0.1;&nbsp; // the time resolution of
+    our clock, seconds<br>
+    &nbsp;&nbsp;&nbsp; double bindt = 10.0; //size of each larger count
+    bin in seconds<br>
+    &nbsp;&nbsp; &nbsp;<br>
+    &nbsp;&nbsp; &nbsp;<br>
+    &nbsp;&nbsp;&nbsp; // differential decay probability per atom per dt<br>
+    &nbsp;&nbsp;&nbsp; double dt_DecayProb[2];<br>
+    &nbsp;&nbsp;&nbsp; for(int i=0; i&lt;2; i++){<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dt_DecayProb[i]= dt/Lifetime1[i];
+    &nbsp;<br>
+    &nbsp;&nbsp;&nbsp; }<br>
+    &nbsp;&nbsp; &nbsp;<br>
+    &nbsp;&nbsp;&nbsp; int Ndecay[2], Nt[2];<br>
+    &nbsp;&nbsp;&nbsp; int TotalTime = LONGENOUGH; // TotalTime is a
+    parameter we need to set long enough&nbsp;&nbsp;&nbsp; &nbsp;<br>
+    &nbsp;&nbsp;&nbsp; srand48(1299811); // a large prime &nbsp;<br>
+    &nbsp;&nbsp;&nbsp; double tt = 0.0;&nbsp;&nbsp; // our overall clock
+    time<br>
+    &nbsp; <br>
+    &nbsp; for(int i=0; i&lt;2; i++){<br>
+    &nbsp;&nbsp;&nbsp; Nt[i] = Natoms1[i];&nbsp; // starting number of
+    atoms for a given isotope<br>
+    &nbsp; }<br>
+    &nbsp; <br>
+    &nbsp; int Ndeltat = LONGENOUGH/bindt;&nbsp; &nbsp;<br>
+    &nbsp; <br>
+    &nbsp; for(int i=0; i&lt;2; i++){<br>
+    &nbsp;&nbsp;&nbsp; DecayArr[i] = new double [Ndeltat]();&nbsp; //
+    initialize our decay counter array<br>
+    &nbsp;&nbsp;&nbsp; RemainArr[i] = new double [Ndeltat](); // this
+    will keep track of remaining atoms<br>
+    &nbsp; }<br>
+    &nbsp; <br>
+    &nbsp; decaytot = new double [Ndeltat]();<br>
+    &nbsp; remaintot = new double [Ndeltat]();<br>
+    &nbsp; <br>
+    &nbsp;&nbsp;&nbsp; while(tt &lt; TotalTime)
+    {&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Ndecay[0] = 0;&nbsp; //
+    reset the atom decay counter for each dt time interval<br>
+    &nbsp;&nbsp; &nbsp;Ndecay [1] = 0;<br>
+    &nbsp;&nbsp; &nbsp;<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // now loop over all of our
+    atoms, check if any decay in this dt interval<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for(int i=0;i&lt;2;i++){ <br>
+    &nbsp;&nbsp; &nbsp;for(int j=0; j&lt;Nt[i]; j++){<br>
+    &nbsp;&nbsp; &nbsp;&nbsp; int idecay = drand48() &lt;=
+    dt_DecayProb[i] ? 1 : 0 ;&nbsp; // conditional statement<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    if(idecay){<br>
+    &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    DecayArr[i][(int)(tt/bindt)] += 1.0; // here the index is modulo
+    bindt=10sec<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+
+    Ndecay[i] += 1;<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    }&nbsp; &nbsp;<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    }&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // end of our atom-decay check loop<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Nt[i] -= Ndecay[i];&nbsp;
+    // remove the incremental number of decayed atoms from the total
+    number<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    RemainArr[i][(int)(tt/bindt)] = Nt[i];<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>
+    &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; tt +=
+    dt;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<br>
+    &nbsp;&nbsp;&nbsp; }&nbsp; // end of our outer time loop<br>
+    &nbsp; &nbsp;<br>
+    &nbsp;&nbsp;&nbsp; for(int i=0;i&lt;Ndeltat;i++){<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; decaytot[i] +=
+    DecayArr[0][i]+DecayArr[1][i];<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; remaintot[i] +=
+    RemainArr[0][i]+RemainArr[1][i]+Natoms1[2];<br>
+    &nbsp;&nbsp;&nbsp; &nbsp;<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cout &lt;&lt;
+    (i+0.5)*bindt &lt;&lt; "\t" &lt;&lt; DecayArr[0][i] &lt;&lt;
+    "\t"&lt;&lt; RemainArr[0][i] &lt;&lt; "\t" &lt;&lt; DecayArr[1][i]
+    &lt;&lt; "\t" &lt;&lt; RemainArr[1][i]<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;&lt; "\t" &lt;&lt;
+    decaytot[i] &lt;&lt; "\t" &lt;&lt; remaintot[i] &lt;&lt; endl;<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>
+    <br>
+    }&nbsp;&nbsp;&nbsp; <br>
+    <div align="center"><a
+        href="file:///home/cmutnik/work/lab6/html/index.html">Home</a> |
+      <a href="file:///home/cmutnik/work/lab6/html/pi.html">Lab1</a> | <a
+        href="file:///home/cmutnik/work/lab6/html/lab2.html">Lab2</a> |
+      <a href="file:///home/cmutnik/work/lab6/html/lab3.html">Lab3</a> |
+      <a href="file:///home/cmutnik/work/lab6/html/lab4.html">Lab4</a> |
+      <a href="file:///home/cmutnik/work/lab6/html/lab5.html">Lab5</a> |
+      <a href="file:///home/cmutnik/work/lab6/html/lab6.html">Lab6</a></div>
+  </body>
+</html>

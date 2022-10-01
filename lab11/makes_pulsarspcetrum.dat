@@ -1,0 +1,14 @@
+MAKE Pulsar.png
+
+[cmutnik@pclab4 lab11]$ DFTcalc 200000 5000000 1000  <  pulsar.dat  >  pulsarspectrum.dat
+fmin= 200000, fmax= 5e+06, fstep= 1000
+100001 lines read, deltat= 1.000000e-04 s, tau = 1.000000e+01 s
+
+
+
+MAKE Pulsar2.png
+
+[cmutnik@pclab4 lab11]$ DFTcalc 200000 5000000 100000  <  pulsar.dat  >  pulsarspectrum2.dat
+fmin= 200000, fmax= 5e+06, fstep= 100000
+100001 lines read, deltat= 1.000000e-04 s, tau = 1.000000e+01 s
+

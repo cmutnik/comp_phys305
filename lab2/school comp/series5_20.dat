@@ -1,0 +1,23 @@
+Enter desired value of z
+Enter number of terms 
+        1 iteration(s), causes fractional error = 0.993262053000914524
+        2 iteration(s), causes fractional error = 1.026951787996341903
+        3 iteration(s), causes fractional error = 0.942727450507773512
+        4 iteration(s), causes fractional error = 1.083101346322054237
+        5 iteration(s), causes fractional error = 0.907633976554203303
+        6 iteration(s), causes fractional error = 1.083101346322054237
+        7 iteration(s), causes fractional error = 0.936878538182178366
+        8 iteration(s), causes fractional error = 1.041323401139232496
+        9 iteration(s), causes fractional error = 0.976045361791073818
+       10 iteration(s), causes fractional error = 1.012310939206717553
+       11 iteration(s), causes fractional error = 0.994178150498895685
+       12 iteration(s), causes fractional error = 1.002420327184269322
+       13 iteration(s), causes fractional error = 0.998986086898696835
+       14 iteration(s), causes fractional error = 1.000306948546993979
+       15 iteration(s), causes fractional error = 0.999835212232948578
+       16 iteration(s), causes fractional error = 0.999992457662098100
+       17 iteration(s), causes fractional error = 0.999943318465488895
+       18 iteration(s), causes fractional error = 0.999957771171396503
+       19 iteration(s), causes fractional error = 0.999953756530908677
+       20 iteration(s), causes fractional error = 0.999954813015182298
+       21 iteration(s), causes fractional error = 0.999954548894106399

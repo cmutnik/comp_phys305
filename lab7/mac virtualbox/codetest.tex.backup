@@ -1,0 +1,30 @@
+\documentclass[11pt]{article}
+\usepackage{graphicx}  % this is the up-to-date package for all figures
+\usepackage{float}	% allows use of 'H' command
+\usepackage{hyperref}	% needed to add hyperlinks
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue,
+  filecolor=magenta,
+  urlcolor=cyan,
+}
+
+% these are some custom control of the page size and margins
+% \topmargin= 0.2in  % these 1st two may be needed for some computers
+%\textheight=8.75in
+\textwidth=6.5in
+\oddsidemargin=0cm
+\evensidemargin=0cm
+
+% this is where the actual document itself (rather than control statements) begins:
+
+\begin{document}
+
+\pagestyle{myheadings}
+
+
+\title{RK4: Pendulum}
+\maketitle
+
+
+\definecolor{keyword}{HTML}{0057AE} \definecolor{basic}{HTML}{141312} \definecolor{background}{HTML}{FFFFFF} \lstset{language=C, backgroundcolor=\color{background}, basicstyle=\color{basic}\ttfamily, keywordstyle=\color{keyword}\bfseries, }

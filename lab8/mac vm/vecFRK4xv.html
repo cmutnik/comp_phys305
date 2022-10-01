@@ -1,0 +1,129 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>projectile</title>
+  </head>
+  <body>
+    /* vecFRK4xv: a function to calculate fourth-order Runge-Kutta<br>
+    &nbsp;&nbsp; for 1-dimensional F = dp/dt = f(x(t),v(t)) (Newton
+    force law) <br>
+    &nbsp; &nbsp;<br>
+    &nbsp;&nbsp; Both x and v increments must be calculated at each step
+    in <br>
+    &nbsp;&nbsp; the integration of the equation, and xold and vold must
+    be<br>
+    &nbsp;&nbsp; reset after each step <br>
+    --Corey Mutnik 3/2015<br>
+    &nbsp;--modified from: P. Gorham: updated 3/20/2007 for Physics 305,
+    add explicit time dependence,<br>
+    correct error in previous version&nbsp; */<br>
+    // this version for c++ usage<br>
+    <br>
+    #include "3Vector.h"<br>
+    <br>
+    // Here is the primary function<br>
+    <br>
+    vec3 vecFRK4xv(int ytype, vec3 (*f_x)(double, vec3, vec3),<br>
+    &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; vec3
+    (*f_v)(double, vec3, vec3),<br>
+    &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
+    double t,vec3 xold,vec3 vold,double dt)<br>
+    <br>
+    /*&nbsp;&nbsp; &nbsp;ytype = 0 for x-equation, 1 for v-equation<br>
+    &nbsp; &nbsp;&nbsp; &nbsp;f_x = user supplied function for dx/dt=v<br>
+    &nbsp;&nbsp; &nbsp;f_v: force equation as noted above<br>
+    &nbsp;&nbsp; &nbsp;t=time, xold, vold, prior position and velocity<br>
+    &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;dt = step size<br>
+    <br>
+    &nbsp;&nbsp; vec3 (*f_xv)(double, vec3, vec3) ==&gt; pointer to a
+    function of<br>
+    &nbsp;&nbsp; two vec3s that returns a vec3. Either dv/dt or dx/dt.<br>
+    <br>
+    &nbsp;&nbsp; &nbsp;4th order general form:<br>
+    &nbsp;&nbsp;&nbsp; y(t+dt) = y(t) + 1/6 * (k1 + 2k2 + 2k3 + k4)<br>
+    &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;k1 = dt *
+    f(t,y)<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp; &nbsp;k2 = dt * f(t+dt/2, y(t) + k1/2)<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    k3 = dt * f(t+dt/2, y(t) + k2/2)<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp; &nbsp;k4 = dt * f(t+dt, y(t) + k3)<br>
+    <br>
+    Error in k4 term corrected below --PG 4/24/07<br>
+    */<br>
+    <br>
+    {<br>
+    &nbsp;&nbsp; &nbsp;vec3
+    k1x,k2x,k3x,k1v,k2v,k3v,k4x,k4v,k2x2,k2v2,k3x2,k3v2;<br>
+    <br>
+    &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;k1x = scalar_vec3mult(dt,
+    (*f_x)(t, xold, vold));<br>
+    &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;k1v = scalar_vec3mult(dt,
+    (*f_v)(t, xold, vold));<br>
+    &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br>
+    &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;k2x = scalar_vec3mult(dt,
+    (*f_x)(t+dt/2.0,<br>
+    &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+    &nbsp;vec3sum(xold,scalar_vec3mult(0.5,k1x)),<br>
+    &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+    &nbsp;vec3sum(vold,scalar_vec3mult(0.5,k1v))));<br>
+    &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;k2v = scalar_vec3mult(dt,
+    (*f_v)(t+dt/2.0,<br>
+    &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+    &nbsp;vec3sum(xold,scalar_vec3mult(0.5,k1x)),<br>
+    &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+    &nbsp;vec3sum(vold,scalar_vec3mult(0.5,k1v))));<br>
+    &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br>
+    &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;k3x = scalar_vec3mult(dt,
+    (*f_x)(t+dt/2.0,<br>
+    &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+    &nbsp;vec3sum(xold,scalar_vec3mult(0.5,k2x)),<br>
+    &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+    &nbsp;vec3sum(vold,scalar_vec3mult(0.5,k2v))));<br>
+    &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;k3v = scalar_vec3mult(dt,
+    (*f_v)(t+dt/2.0,<br>
+    &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+    &nbsp;vec3sum(xold,scalar_vec3mult(0.5,k2x)),<br>
+    &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+    &nbsp;vec3sum(vold,scalar_vec3mult(0.5,k2v))));<br>
+    <br>
+    &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;k4x = scalar_vec3mult(dt,
+    (*f_x)(t+dt,<br>
+    &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+    &nbsp;vec3sum(xold,k3x),<br>
+    &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+    &nbsp;vec3sum(vold,k3v)));<br>
+    &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;k4v = scalar_vec3mult(dt,
+    (*f_v)(t+dt,<br>
+    &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+    &nbsp;vec3sum(xold,k3x),<br>
+    &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+    &nbsp;vec3sum(vold,k3v)));<br>
+    <br>
+    &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;k2x2 =
+    scalar_vec3mult(2.0,k2x);<br>
+    &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;k2v2 =
+    scalar_vec3mult(2.0,k2v);<br>
+    &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;k3x2 =
+    scalar_vec3mult(2.0,k3x);<br>
+    &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;k3v2 =
+    scalar_vec3mult(2.0,k3v);<br>
+    <br>
+    &nbsp;&nbsp; &nbsp;if(ytype==0){<br>
+    &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;return(
+    scalar_vec3mult((1.0/6.0),<br>
+    &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp; &nbsp;vec3sum4(k1x,k2x2,k3x2,k4x)) ); <br>
+    &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;} else { <br>
+    &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;return(
+    scalar_vec3mult((1.0/6.0),<br>
+    &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp; &nbsp;vec3sum4(k1v,k2v2,k3v2,k4v)) ); <br>
+    &nbsp;&nbsp; &nbsp;}<br>
+    }<br>
+    <br>
+  </body>
+</html>

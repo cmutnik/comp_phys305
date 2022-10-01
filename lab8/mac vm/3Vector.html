@@ -1,0 +1,119 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>projectile</title>
+  </head>
+  <body>
+    // example of how to use typedef for a 3vector, along with<br>
+    //some vector function definitions <br>
+    // Corey Mutnik 3/2015<br>
+    //modified from: P. Gorham 3/10/03 for P305 &nbsp;&nbsp;&nbsp; <br>
+    &nbsp;&nbsp;&nbsp; // updated to c++ March 2013<br>
+    <br>
+    #include &lt;iostream&gt;<br>
+    #include &lt;iomanip&gt;<br>
+    #include &lt;fstream&gt;<br>
+    #define USE_MATH_DEFINES<br>
+    #include &lt;cmath&gt;<br>
+    #include &lt;cstdlib&gt; <br>
+    using namespace std;<br>
+    <br>
+    #include "3Vector.h"<br>
+    <br>
+    &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<br>
+    // these are general vector routines. Functions that return vectors
+    must be returned to a vector<br>
+    // , must pass vectors back and forth<br>
+    <br>
+    <br>
+    <br>
+    vec3&nbsp; vec3sum( vec3 _A, vec3 _B)&nbsp; // sum of two vectors<br>
+    {<br>
+    &nbsp;&nbsp; &nbsp;vec3 _tmp;<br>
+    &nbsp;&nbsp; &nbsp;_tmp.x = _A.x + _B.x;<br>
+    &nbsp;&nbsp; &nbsp;_tmp.y = _A.y + _B.y;<br>
+    &nbsp;&nbsp; &nbsp;_tmp.z = _A.z + _B.z;<br>
+    &nbsp;&nbsp; &nbsp;return(_tmp);<br>
+    }<br>
+    vec3&nbsp; vec3diff( vec3 _A, vec3 _B)&nbsp; // difference of two
+    vectors<br>
+    {<br>
+    &nbsp;&nbsp; &nbsp;vec3 _tmp;<br>
+    &nbsp;&nbsp; &nbsp;_tmp.x = _A.x - _B.x;<br>
+    &nbsp;&nbsp; &nbsp;_tmp.y = _A.y - _B.y;<br>
+    &nbsp;&nbsp; &nbsp;_tmp.z = _A.z - _B.z;<br>
+    &nbsp;&nbsp; &nbsp;return(_tmp);<br>
+    }<br>
+    vec3&nbsp; scalar_vec3sum( double _A, vec3 _B) // sum of scalar and
+    vector<br>
+    {<br>
+    &nbsp;&nbsp; &nbsp;vec3 _tmp;<br>
+    &nbsp;&nbsp; &nbsp;_tmp.x = _A + _B.x;<br>
+    &nbsp;&nbsp; &nbsp;_tmp.y = _A + _B.y;<br>
+    &nbsp;&nbsp; &nbsp;_tmp.z = _A + _B.z;<br>
+    &nbsp;&nbsp; &nbsp;return(_tmp);<br>
+    }<br>
+    <br>
+    double vec3mag (vec3 _A)&nbsp; // _magnitude of vector<br>
+    {<br>
+    &nbsp;&nbsp; &nbsp;return( sqrt(_A.x*_A.x+_A.y*_A.y+_A.z*_A.z));<br>
+    }<br>
+    <br>
+    vec3&nbsp; scalar_vec3mult( double _A, vec3 _B)&nbsp; // scalar
+    times vector<br>
+    {<br>
+    &nbsp;&nbsp; &nbsp;vec3 _tmp;<br>
+    &nbsp;&nbsp; &nbsp;_tmp.x = _A*_B.x;<br>
+    &nbsp;&nbsp; &nbsp;_tmp.y = _A*_B.y;<br>
+    &nbsp;&nbsp; &nbsp;_tmp.z = _A*_B.z;<br>
+    &nbsp;&nbsp; &nbsp;return(_tmp);<br>
+    }<br>
+    double vec3dot ( vec3 _A, vec3 _B )&nbsp; // dot product<br>
+    {<br>
+    &nbsp;&nbsp; &nbsp;double _tmp;<br>
+    &nbsp;&nbsp; &nbsp;_tmp = _A.x*_B.x + _A.y*_B.y + _A.z*_B.z;<br>
+    &nbsp;&nbsp; &nbsp;return(_tmp);<br>
+    }<br>
+    vec3 vec3cross ( vec3 _A, vec3 _B )&nbsp; // cross product<br>
+    {<br>
+    &nbsp;&nbsp; &nbsp;vec3 _tmp;<br>
+    &nbsp;&nbsp; &nbsp;_tmp.x = _A.y*_B.z - _A.z*_B.y;<br>
+    &nbsp;&nbsp; &nbsp;_tmp.y = _A.z*_B.x - _A.x*_B.z;<br>
+    &nbsp;&nbsp; &nbsp;_tmp.z = _A.x*_B.y - _A.y*_B.x;<br>
+    &nbsp;&nbsp; &nbsp;return(_tmp);<br>
+    }<br>
+    <br>
+    vec3 vec3norm ( vec3 _A )&nbsp; // return unit vector for _A <br>
+    {&nbsp;&nbsp; &nbsp;<br>
+    &nbsp;&nbsp; &nbsp;vec3 _tmp;<br>
+    &nbsp;&nbsp; &nbsp;double _mag;<br>
+    &nbsp;&nbsp; &nbsp;_mag = sqrt(_A.x*_A.x+_A.y*_A.y+_A.z*_A.z);<br>
+    &nbsp;&nbsp; &nbsp;_tmp.x = _A.x/_mag;<br>
+    &nbsp;&nbsp; &nbsp;_tmp.y = _A.y/_mag;<br>
+    &nbsp;&nbsp; &nbsp;_tmp.z = _A.z/_mag;<br>
+    &nbsp;&nbsp; &nbsp;return(_tmp);<br>
+    }<br>
+    <br>
+    // add 3 vectors at once<br>
+    vec3&nbsp; vec3sum3( vec3 X, vec3 Y, vec3 Z)<br>
+    {<br>
+    &nbsp;&nbsp; &nbsp;vec3 tmp;<br>
+    &nbsp;&nbsp; &nbsp;tmp.x = X.x+Y.x+Z.x;<br>
+    &nbsp;&nbsp; &nbsp;tmp.y = X.y+Y.y+Z.y;<br>
+    &nbsp;&nbsp; &nbsp;tmp.z = X.z+Y.z+Z.z;<br>
+    &nbsp;&nbsp; &nbsp;return(tmp);<br>
+    }<br>
+    // add 4 vectors at once<br>
+    vec3&nbsp; vec3sum4( vec3 W, vec3 X, vec3 Y, vec3 Z)<br>
+    {<br>
+    &nbsp;&nbsp; &nbsp;vec3 tmp;<br>
+    &nbsp;&nbsp; &nbsp;tmp.x = W.x+X.x+Y.x+Z.x;<br>
+    &nbsp;&nbsp; &nbsp;tmp.y = W.y+X.y+Y.y+Z.y;<br>
+    &nbsp;&nbsp; &nbsp;tmp.z = W.z+X.z+Y.z+Z.z;<br>
+    &nbsp;&nbsp; &nbsp;return(tmp);<br>
+    }<br>
+    <br>
+  </body>
+</html>

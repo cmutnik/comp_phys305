@@ -1,0 +1,7 @@
+# Gnuplot file for saving images
+# can change dimensions and name of output file
+
+set terminal png size 1200,900
+set ouput 'example.png'
+replot
+unset output

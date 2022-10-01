@@ -1,0 +1,142 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>lab4</title>
+  </head>
+  <body>
+    <b>// simple harmonic oscillator using Euler's method <br>
+      // Corey Mutnik 3/3/15<br>
+      // Modified from: P. Gorham, updated March 2013 for UH Physics 305<br>
+      <br>
+      #include &lt;iostream&gt;<br>
+      #include &lt;iomanip&gt;<br>
+      #include &lt;fstream&gt;<br>
+      #define USE_MATH_DEFINES<br>
+      #include &lt;cmath&gt;<br>
+      #include &lt;cstdlib&gt; <br>
+      using namespace std;<br>
+      <br>
+      #define Tmax&nbsp; 50&nbsp;&nbsp;&nbsp;&nbsp; // seconds for
+      integration<br>
+      <br>
+      <br>
+      main(int argc, char *argv[])<br>
+      {<br>
+      &nbsp; double k,m,xt0,t0,vt0,w,vtii,xtii,t,dt,xti,vti,
+      xtrue,vtrue, E, dEperE;<br>
+      &nbsp; double dE = 0;<br>
+      &nbsp;&nbsp; ofstream outfile; <br>
+      &nbsp;&nbsp; <br>
+      &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; outfile.open("osc1.dat");<br>
+      &nbsp;&nbsp;&nbsp;
+      outfile.precision(5);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      // set the precision for output<br>
+      &nbsp;&nbsp;&nbsp; <br>
+      // program wont run unless proper command life parameters are
+      set&nbsp; <br>
+      <br>
+      if(argc&lt;1){<br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; cerr&lt;&lt; "usage:
+      harmonic oscillator [time interval, dt]"&lt;&lt;endl;<br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; exit(0);<br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; }<br>
+      <br>
+      <br>
+      //modify program to accept time interval as a command line
+      parameter<br>
+      &nbsp;&nbsp;&nbsp; dt = atof(argv[1]);<br>
+      <br>
+      &nbsp;&nbsp;&nbsp; k =
+      1.0;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      // spring constant<br>
+      &nbsp;&nbsp;&nbsp; m =
+      1.0;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      // mass in kg<br>
+      &nbsp;&nbsp;&nbsp; w = sqrt(k/m);<br>
+      &nbsp;&nbsp;&nbsp; xt0 =
+      1.0;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      // initial position<br>
+      &nbsp;&nbsp;&nbsp; t0 =
+      0.0;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      // initial time<br>
+      &nbsp;&nbsp;&nbsp; vt0 =
+      0.0;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      // initial velocity<br>
+      <br>
+      <br>
+      &nbsp;&nbsp;&nbsp; xti =
+      xt0;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <br>
+      &nbsp;&nbsp;&nbsp; vti = vt0;<br>
+      &nbsp;&nbsp;&nbsp; t = t0;<br>
+      //&nbsp;&nbsp;&nbsp; E = (0.5*m*pow(vt0,2.0)) +
+      (0.5*k*pow(xt0,2.0));<br>
+      &nbsp;&nbsp;&nbsp; double T = 2.0*M_PI/w;<br>
+      &nbsp;&nbsp;&nbsp; <br>
+      //inital conditions<br>
+      &nbsp;&nbsp;&nbsp; //outfile &lt;&lt; t0 &lt;&lt; "&nbsp; "
+      &lt;&lt; xt0 &lt;&lt; "&nbsp; " &lt;&lt; vt0 &lt;&lt; "&nbsp; "
+      &lt;&lt; xtrue &lt;&lt; "&nbsp; " &lt;&lt; vtrue &lt;&lt; "\t"
+      &lt;&lt; dE/E &lt;&lt; "\t" &lt;&lt; E &lt;&lt; endl;<br>
+      <br>
+      /* Here is the loop that propagates the motion:<br>
+      &nbsp;&nbsp;&nbsp; vtii is the velocity at the new time, vti the
+      previous step time;<br>
+      &nbsp;&nbsp;&nbsp; xtii is the new position, xti the previous;<br>
+      &nbsp;&nbsp;&nbsp; after each step is calculated, the old is set<br>
+      &nbsp;&nbsp;&nbsp; to the new, and the cycle is repeated&nbsp; */<br>
+      <br>
+      &nbsp;&nbsp;&nbsp; for(t=t0; t&lt;Tmax; t+= dt){<br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; vtii = vti + dt*(-k/m)*xti;<br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; xtii = xti + dt*vti;<br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; double dv = vtii - vti;<br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; double dx = xtii - xti;<br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; xti = xtii;&nbsp; // set the
+      old values to the new ones for next step<br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; vti = vtii;<br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; xtrue = xt0*cos(w*t);<br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; vtrue = vt0&nbsp; +
+      -sin(w*t);<br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; E = (0.5*m*pow(vtrue,2.0)) +
+      (0.5*k*pow(xtrue,2.0));<br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; //double E2 =
+      (0.5*m*pow(vtii,2.0)) + (0.5*k*pow(xtii,2.0));<br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; //dE += (0.5*m*pow(dv,2.0))
+      + (0.5*k*pow(dx,2.0));<br>
+      <br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; if(t&gt;=(Tmax-T)){<br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; double Etot =
+      (0.5*m*pow(vtii,2.0)) + (0.5*k*pow(xtii,2.0));<br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; double Ef =
+      abs(E-Etot)/E;<br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; dEperE += Ef;<br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; }<br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; outfile &lt;&lt; t &lt;&lt;
+      "&nbsp; " &lt;&lt; xtii &lt;&lt; "&nbsp; " &lt;&lt; vtii &lt;&lt;
+      "&nbsp; " &lt;&lt; xtrue &lt;&lt; "&nbsp; " &lt;&lt; vtrue
+      &lt;&lt; endl; // &lt;&lt; "\t" &lt;&lt; (dEperE/T) &lt;&lt; "\t"
+      &lt;&lt; E2 &lt;&lt; endl;<br>
+      <br>
+      &nbsp;&nbsp;&nbsp; }&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <br>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; // modification to plot
+      (fractional energy change in one period of the oscillator) vs
+      (frac osc period that time interval dt fills)<br>
+      //&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; cout &lt;&lt; (dt/T)
+      &lt;&lt; "\t" &lt;&lt; ((dE/E)/T) &lt;&lt; endl;<br>
+      &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+      cout &lt;&lt; (dt/T) &lt;&lt; "\t" &lt;&lt; ((dEperE)/T) &lt;&lt;
+      endl;<br>
+      //&nbsp;&nbsp;&nbsp; }<br>
+      <br>
+      <br>
+      }</b><br>
+    <div align="center"><a href="index.html">Home</a> | <a
+        href="pi.html">Lab1</a> | <a href="lab2.html">Lab2</a> | <a
+        href="lab3.html">Lab3</a> | <a href="lab4.html">Lab4</a> | <a
+        href="lab5.html">Lab5</a> | <a href="lab6.html">Lab6</a> | <a
+        href="lab7.html">Lab7</a><br>
+    </div>
+  </body>
+</html>

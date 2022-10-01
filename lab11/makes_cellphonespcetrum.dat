@@ -1,0 +1,6 @@
+[cmutnik@pclab4 lab11]$ DFTcalc 2.3e9 2.5e9 833333.33  <  cellphone.dat  >  cellphonespectrum.dat
+
+
+fmin= 2.3e+09, fmax= 2.5e+09, fstep= 833333
+120001 lines read, deltat= 1.000000e-11 s, tau = 1.200000e-06 s
+

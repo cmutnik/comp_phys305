@@ -1,5 +1,7 @@
 # Computation Physics #
 
+Webpage for this class is hosted oh [github.io, here.](https://cmutnik.github.io/comp_phys305/)
+
 ![](./final_paper/final_pg1.png)
 
 ![](./final_paper/final_pg2.png)

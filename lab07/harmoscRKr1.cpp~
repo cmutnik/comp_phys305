@@ -30,7 +30,7 @@ main( int argc, char *argv[])
 
    ofstream outfile;  
    
-	outfile.open("oscRK1.dat");
+	outfile.open("oscRK300.dat");
 
 
 // program wont run unless proper command line parameters are set

@@ -57,7 +57,7 @@ double f_x (double x, double v)
 // Here is the actual force law
 double f_dvdt( double x, double v)
 {
-// F = dp/dt = m dv/dt = m(-kx/m) = -kx | k=1
+//insert the proper force law into the return value
 	double retval = -x;
 	return( retval );
 }
